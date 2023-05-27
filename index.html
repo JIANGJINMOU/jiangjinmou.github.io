@@ -21,6 +21,559 @@ description: "中西融合, 即学即会, 从此不再辛苦背单词"
 </ul>
 -->
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html >
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+<title>个人博客</title>
+
+<style type="text/css">
+* {
+    margin: 0;
+    padding: 0;
+}
+.menus.menus1 h1 {
+    vertical-align: sub;
+    float: left;
+    margin-top: 30px;
+    font-size: 54px;
+    text-transform: none;
+    font-family: "华文行楷";
+    font-weight: lighter;
+    color: #000;
+}
+.banenr {
+    height: 80px;
+    width: auto;
+    background-color: #eb4537;
+}
+.banenr .banner-bg h3 {
+    font-size: 36px;
+    font-weight: lighter;
+    float: left;
+    margin-top: 20px;
+    color: #f1f1f1;
+    margin-left: -30px;
+}
+
+.banner-bg {
+    margin: auto;
+    width: 1100px;
+    height: 80px;
+    padding-left: 0px;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+
+
+li {
+    list-style: none;
+}
+.clear {
+    clear: both;
+}
+.menus {
+    width: 1100px;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    height: 100px;
+}
+.menus ul {
+    width: 700px;
+    position: relative;
+    float: right;
+    margin-top: 20px;
+    font-style: italic;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #ff5a5a;
+}
+.menus li {
+    float: left;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    font-size: 24px;
+}
+.menus li:nth-child(2) {
+    color: #fff;
+}
+.menus .bg {
+    width: 100px;
+    height: 40px;
+    position:absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    background-image: url(picture/ban.png);   /*动画随鼠标滑动*/
+}
+
+.tab {
+    width: 750px;
+    height: 500px;
+    border: 1px solid #000;
+    margin-top: 20px;
+    font-size: 40px;
+    line-height: 500px;
+    text-align: center;
+    color: #888;
+    font-weight: bold;
+    display: none;
+}
+.show {
+    display: block;
+}
+
+#footer {
+    text-align: center;
+    vertical-align: middle;
+    height: 150px;
+    padding-top: 50px;
+    color: #FFF;
+    background-color: #333;
+}
+body {
+    margin: 0px;
+    background-color: #f1f1f1;
+}
+.slider {
+    background-color: #C99;
+    height: 620px;
+    width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-radius: 12px;
+    padding-bottom: 0px;
+}
+
+
+
+body { 
+    width:auto;
+    margin: 0px;
+    padding: 0px;
+}
+.slider1 {
+    height: 600px;
+    width: 1080px;
+    margin-top: 10px;
+    margin-right: 10px;
+
+    margin-left: 10px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+.welcome-text {
+    height: 200px;
+    width: 1100px;
+    margin-top: 12px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    background-color: #f1f1f1;
+    font-size: 48px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 40px;
+}
+.scroll-td-text {
+    height: 40px;
+    width: 280px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 10px;
+    font-size: 24px;
+}
+.introduce {
+    height: 40px;
+    width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 24px;
+    padding-top: 8px;
+    border-bottom-width: 2px;
+    border-left-width: 10px;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-bottom-color: #F00;
+    border-left-color: #9F3;
+}
+.introduce-content {
+    height: 500px;
+    width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #F0EBDB;
+    margin-bottom: 5px;
+    border-radius: 15px;
+}
+#img-introduce {
+    background-color: #CC0;
+    float: left;
+    height: 480px;
+    width: 620px;
+    margin: 10px;
+}
+#text-introduce {
+    margin: 10px;
+    height: 480px;
+    width: 440px;
+    float: left;
+}
+.text-introducce {
+    height: 100px;
+    width: 440px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.scroll {
+    height: 380px;
+    width: 1000px;
+    margin-right: auto;
+    background-color: #FFF;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: auto;
+    margin-left: auto;
+}
+.ms-ex {
+    padding: 10px;
+    height: 440px;
+    width: 1100px;
+    border: 1px solid #999;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+.text-box {
+    height: 40px;
+    width: 150px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    float: left;
+    font-size: 30px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 10px;
+
+}
+.ms-exhibition p {
+    height: 36px;
+    margin-top: 0px;
+}
+
+
+.ms-exhibition {
+    margin-right: auto;
+    font-size: 36px;
+    padding-top: 0px;
+    text-align: center;
+    height: 36px;
+    width: 1000px;
+    margin-left: auto;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    background-color: #f1f1f1;
+}
+#text-box1 {
+    background-color: #FF6;
+    border-radius: 12px;
+}
+#text-box3 {
+    background-color: #F03;
+    border-radius: 12px;
+}
+#text4 #text-box4 {
+    background-color: #6F6;
+    border-radius: 12px;
+}
+.swiper-container {
+      width: 100%;
+      height: 100%;
+      margin-left: auto;
+      margin-right: auto;
+
+
+    }
+#text-box2 {
+    background-color: #09F;
+    border-radius: 12px;
+}
+.text-box-right {
+    float: left;
+    height: 80px;
+    width: 250px;
+    margin-top: 16px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    font-size: 18px;
+}
+    .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin-top: 10px;
+
+
+
+    }
+
+.scroll-in {
+    height: 300px;
+    width: 1080px;
+    margin-top: 40px;
+    margin-right: auto;
+    margin-left: auto;
+
+
+
+}
+
+
+
+.scroll-td {
+    height: 280px;
+    width: 280px;
+    margin-left: 0px;
+}
+h3 {
+    font-size: 24px;
+    line-height: 30px;
+    font-family: "微软雅黑";
+    text-indent: 48px;
+}
+h1 {
+    line-height: 24px;
+    font-size: 44px;
+}
+</style>
+
+<link href="css/swiper.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+
+   <div class="menus menus1">
+      <h1>个人博客
+      </h1>
+      <ul>
+        <div class="bg"></div>
+            <li><span><a href="javascript:;" target="blank">首页</a></span></li>
+            <li><span><a href="xz.html" target="blank">游戏扩列</a></span></li>
+            <li><span><a href="dumplings.html" target="blank">爱好</a></span></li>
+            <li><span><a href="drink.html">番剧</a></span></li>
+
+        </ul>
+        <div class="clear"></div>
+    </div>
+
+<script src="js/jquery-1.10.2.js"></script>
+<script src="js/index.js"></script>
+<div class="banenr">
+  <div class="banner-bg">
+    <h3>一个在中国上学的学生</h3>
+  </div></div>
+
+<div class="slider">
+<div class="slider1">
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><a href="dumplings.html" target="new"><img src="picture/jz.jpg"></a></div>
+
+
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  <!-- Swiper JS -->
+
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+
+
+
+
+
+
+</div>
+</div>
+<hr>
+
+<div class="welcome-text">
+  <h1>欢迎您来到&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 我的个人空间</h1>
+  <h3>&nbsp;</h3>
+  <h3>欢迎你，在此偶遇的陌生人，希望你我的灵魂能够发生有趣的碰撞。</h3>
+</div>
+
+<div class="introduce">个人简介</div>
+<div class="introduce-content">
+  <div id="img-introduce"><img style="width: 100%;height: 100%;" src="picture/01.png"> </div>
+  <div id="text-introduce" class="text-introduce">
+    <div class="text-introducce" id="text1">
+      <div class="text-box" id="text-box1"> ·个人信息·</div>
+
+      <div class="text-box-right" id="box-right1"> <br>     年龄：20   <br>       </div>
+    </div>
+    <div class="text-introducce" id="text2">
+      <div class="text-box" id="text-box2">  ·吃！·</div>
+      <div class="text-box-right" id="box-right2"> 最爱的食物：炸酱面<dr></dr>
+        最爱的饮料：椰果百香果汁</div>
+    </div>
+    <div class="text-introducce" id="text3">
+        <div class="text-box" id="text-box3">·留言·</div>
+        <div class="text-box-right" id="box-right-3">这里是我的个人博客，很高兴你能访问，在这里我会将我自己展现给你，希望你能通过我的自我介绍了解我，不仅是外在看起来的那样，更多的是我的爱好与兴趣，希望能与你有所交集。希望能通过这种方式，遇到志同道合的朋友，在一起聊聊兴趣，在一起娱乐。</div>
+      </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="ms-ex">
+<div class="ms-exhibition">
+  <p>照片墙</p></div>
+  <div class="scroll">
+    <marquee direction="right" behavior="alternate" scrolldelay="200" onmouseover="stop()" onmouseout="start()">
+      <table width="2400" border="0" cellspacing="20" cellpadding="0">
+        <tr>
+          <td class="scroll-td"><img style="height: 100%;" src="picture/01.png"></td>
+          <td class="scroll-td"><img style="height: 100%;" src="picture/01.png"></td>
+          <td class="scroll-td"><img style="height: 100%;" src="picture/01.png"></td>
+          <td class="scroll-td"><img style="height: 100%;" src="picture/01.png"></td>
+          <td class="scroll-td"><img style="height: 100%;" src="picture/01.png"></td>
+          <td class="scroll-td"><img style="height: 100%;" src="picture/01.png"></td>
+          <td class="scroll-td"><img style="height: 100%;" src="picture/01.png"></td>
+          <td class="scroll-td"><img style="height: 100%;" src="picture/01.png"></td>
+        </tr>
+        <tr>
+          <td class="scroll-td-text">近期</td>
+          <td class="scroll-td-text">疫情锻炼</td>
+          <td class="scroll-td-text">懵</td>
+          <td class="scroll-td-text">高考完剃毛</td>
+          <td class="scroll-td-text">毕业聚餐</td>
+          <td class="scroll-td-text">阴间万圣节特效</td>
+          <td class="scroll-td-text">躺平</td>
+          <td class="scroll-td-text">军训期</td>
+        </tr>
+      </table>
+    </marquee>
+</div>
+</div> 
+
+<footer>
+  <div id="footer">
+
+            <a style="color: #fff;">个人版权</a>
+            <p></p>
+  </div>
+
+</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% for post in paginator.posts %}
 <div class="post-preview">
     <a href="{{ post.url | prepend: site.baseurl }}">
