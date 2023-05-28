@@ -1,635 +1,349 @@
----
-layout: page
-description: "中西融合, 即学即会, 从此不再辛苦背单词"
----
-
-<!--
-<ul class="pager">
-  
-    <li class="next">
-        <a href="https://hellogithub.com/article/9aed28d4d64b4649bb364685ef557ae4/" data-toggle="tooltip" data-placement="top" title="学习git">
-                        开始学习<br>
-        </a>
-    </li>           
-  
-    <li class="next">
-        <a href="https://hellogithub.com/article/9aed28d4d64b4649bb364685ef557ae4" data-toggle="tooltip" data-placement="top" title="git简介">
-                        了解更多<br>
-        </a>
-    </li>
-                    
-</ul>
--->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!DOCTYPE html >
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<script src="js/swiper.min.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
-
-<title>个人博客</title>
-
-<style type="text/css">
-* {
-    margin: 0;
-    padding: 0;
-}
-.menus.menus1 h1 {
-    vertical-align: sub;
-    float: left;
-    margin-top: 30px;
-    font-size: 54px;
-    text-transform: none;
-    font-family: "华文行楷";
-    font-weight: lighter;
-    color: #000;
-}
-.banenr {
-    height: 80px;
-    width: auto;
-    background-color: #eb4537;
-}
-.banenr .banner-bg h3 {
-    font-size: 36px;
-    font-weight: lighter;
-    float: left;
-    margin-top: 20px;
-    color: #f1f1f1;
-    margin-left: -30px;
-}
-
-.banner-bg {
-    margin: auto;
-    width: 1100px;
-    height: 80px;
-    padding-left: 0px;
-}
-a {
-    color: #000;
-    text-decoration: none;
-}
-
-
-
-li {
-    list-style: none;
-}
-.clear {
-    clear: both;
-}
-.menus {
-    width: 1100px;
-    margin-top: 0px;
-    margin-right: auto;
-    margin-bottom: 0px;
-    margin-left: auto;
-    height: 100px;
-}
-.menus ul {
-    width: 700px;
-    position: relative;
-    float: right;
-    margin-top: 20px;
-    font-style: italic;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-bottom-color: #ff5a5a;
-}
-.menus li {
-    float: left;
-    width: 100px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    cursor: pointer;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-    font-size: 24px;
-}
-.menus li:nth-child(2) {
-    color: #fff;
-}
-.menus .bg {
-    width: 100px;
-    height: 40px;
-    position:absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-    background-image: url(picture/ban.png);   /*动画随鼠标滑动*/
-}
-
-.tab {
-    width: 750px;
-    height: 500px;
-    border: 1px solid #000;
-    margin-top: 20px;
-    font-size: 40px;
-    line-height: 500px;
-    text-align: center;
-    color: #888;
-    font-weight: bold;
-    display: none;
-}
-.show {
-    display: block;
-}
-
-#footer {
-    text-align: center;
-    vertical-align: middle;
-    height: 150px;
-    padding-top: 50px;
-    color: #FFF;
-    background-color: #333;
-}
-body {
-    margin: 0px;
-    background-color: #f1f1f1;
-}
-.slider {
-    background-color: #C99;
-    height: 620px;
-    width: 1100px;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    border-radius: 12px;
-    padding-bottom: 0px;
-}
-
-
-
-body { 
-    width:auto;
-    margin: 0px;
-    padding: 0px;
-}
-.slider1 {
-    height: 600px;
-    width: 1080px;
-    margin-top: 10px;
-    margin-right: 10px;
-
-    margin-left: 10px;
-    overflow: hidden;
-    border-radius: 12px;
-}
-.welcome-text {
-    height: 200px;
-    width: 1100px;
-    margin-top: 12px;
-    margin-right: auto;
-    margin-bottom: 0px;
-    margin-left: auto;
-    background-color: #f1f1f1;
-    font-size: 48px;
-    text-align: center;
-    vertical-align: middle;
-    padding-top: 40px;
-}
-.scroll-td-text {
-    height: 40px;
-    width: 280px;
-    text-align: center;
-    vertical-align: middle;
-    padding-top: 10px;
-    font-size: 24px;
-}
-.introduce {
-    height: 40px;
-    width: 1100px;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 24px;
-    padding-top: 8px;
-    border-bottom-width: 2px;
-    border-left-width: 10px;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    border-bottom-color: #F00;
-    border-left-color: #9F3;
-}
-.introduce-content {
-    height: 500px;
-    width: 1100px;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: #F0EBDB;
-    margin-bottom: 5px;
-    border-radius: 15px;
-}
-#img-introduce {
-    background-color: #CC0;
-    float: left;
-    height: 480px;
-    width: 620px;
-    margin: 10px;
-}
-#text-introduce {
-    margin: 10px;
-    height: 480px;
-    width: 440px;
-    float: left;
-}
-.text-introducce {
-    height: 100px;
-    width: 440px;
-    margin-bottom: 20px;
-    margin-top: 10px;
-}
-.scroll {
-    height: 380px;
-    width: 1000px;
-    margin-right: auto;
-    background-color: #FFF;
-    position: relative;
-    overflow: hidden;
-    margin-top: 20px;
-    margin-bottom: auto;
-    margin-left: auto;
-}
-.ms-ex {
-    padding: 10px;
-    height: 440px;
-    width: 1100px;
-    border: 1px solid #999;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 14px;
-    margin-bottom: 14px;
-}
-.text-box {
-    height: 40px;
-    width: 150px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    float: left;
-    font-size: 30px;
-    text-align: center;
-    vertical-align: middle;
-    padding-top: 10px;
-
-}
-.ms-exhibition p {
-    height: 36px;
-    margin-top: 0px;
-}
-
-
-.ms-exhibition {
-    margin-right: auto;
-    font-size: 36px;
-    padding-top: 0px;
-    text-align: center;
-    height: 36px;
-    width: 1000px;
-    margin-left: auto;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    background-color: #f1f1f1;
-}
-#text-box1 {
-    background-color: #FF6;
-    border-radius: 12px;
-}
-#text-box3 {
-    background-color: #F03;
-    border-radius: 12px;
-}
-#text4 #text-box4 {
-    background-color: #6F6;
-    border-radius: 12px;
-}
-.swiper-container {
-      width: 100%;
-      height: 100%;
-      margin-left: auto;
-      margin-right: auto;
-
-
-    }
-#text-box2 {
-    background-color: #09F;
-    border-radius: 12px;
-}
-.text-box-right {
-    float: left;
-    height: 80px;
-    width: 250px;
-    margin-top: 16px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 10px;
-    font-size: 18px;
-}
-    .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    margin-top: 10px;
-
-
-
-    }
-
-.scroll-in {
-    height: 300px;
-    width: 1080px;
-    margin-top: 40px;
-    margin-right: auto;
-    margin-left: auto;
-
-
-
-}
-
-
-
-.scroll-td {
-    height: 280px;
-    width: 280px;
-    margin-left: 0px;
-}
-h3 {
-    font-size: 24px;
-    line-height: 30px;
-    font-family: "微软雅黑";
-    text-indent: 48px;
-}
-h1 {
-    line-height: 24px;
-    font-size: 44px;
-}
-</style>
-
-<link href="css/swiper.min.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <title>Wu - Home page of wuwii</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="1075199251,张凯,18772383543,wuwii,追光者w,有梦想的咸鱼,一棵树站在原野上,Slience">
+    <link rel="icon" href="http://blog.wuwii.com/images/favicon.ico?v=5.1.1" type="image/x-icon">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css"/>
+    <link rel="stylesheet" href="css/main.css" media="screen" type="text/css"/>
 </head>
-
 <body>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" xmlns:xml="http://www.w3.org/XML/1998/namespace" class="svg-defs">
+  <defs>
+    <pattern id='image' width="1" height="1" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <image xlink:href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/78881/pattern_141.gif" width="100" height="100" preserveAspectRatio="none"></image>
+    </pattern>
 
+    <g id="shape-butterfly-1">
+      <path class="path" fill="" clip-rule="evenodd" d="M8.65,2.85c0.934-0.2,2.15-0.333,3.65-0.4c1.534-0.1,2.667-0.083,3.4,0.05
+		c1.533,0.267,3.45,0.767,5.75,1.5c2.466,0.8,4.35,1.617,5.65,2.45c2.066,1.2,3.883,2.383,5.45,3.55c2.567,2.1,4.35,3.8,5.35,5.1
+		l2.1,2.5c0.933,1.167,1.517,1.983,1.75,2.45c0.333,0.767,1.083,2.117,2.25,4.05c0.233,0.467,0.717,1.683,1.45,3.65
+		c0.733,2.067,1.2,3.45,1.4,4.15c0.467,1.733,0.917,3.767,1.35,6.1l0.4,3.85l-0.25-3.4c-0.6-5.967-1.267-10.25-2-12.85
+		c-0.733-2.434-2.167-5.467-4.3-9.1c-0.966-1.667-1.566-3-1.8-4c-0.233-0.933-0.1-1.267,0.4-1c1.3,0.733,2.917,3.867,4.85,9.4
+		c1.667,4.7,2.85,11.2,3.55,19.5c0.567,6.934,0.667,11.917,0.3,14.95l0.2,0.05c0.231,0,0.348-0.05,0.35-0.15v0.05l0.1,0.05v27.4
+		c-0.032-0.018-0.065-0.035-0.1-0.05v-0.05c-0.7,0.267-0.983,0.117-0.85-0.45c0.067-0.333,0.017-0.817-0.15-1.45
+		c-0.2-0.6-0.316-0.983-0.35-1.15l-0.5-1.65c-0.533-2.967-0.833-5.034-0.9-6.2c-0.1-1.533-0.133-2.4-0.1-2.6
+		c0-0.933,0.167-1.667,0.5-2.2c0.567-0.9,0.684-1.75,0.35-2.55c-0.167-0.367-0.367-0.6-0.6-0.7c-0.333-0.133-0.517,0.283-0.55,1.25
+		c-0.033,1.533-0.167,2.9-0.4,4.1c-0.1,2.3-0.267,3.684-0.5,4.15c-0.333,0.667-1.25,2.95-2.75,6.85c-1.167,2.8-2.233,4.817-3.2,6.05
+		c-0.9,1.2-1.583,2.1-2.05,2.7c-0.8,1-1.434,1.667-1.9,2c-2.067,1.333-3.633,2.067-4.7,2.2c-3.033,0.267-4.95,0.317-5.75,0.15
+		c-0.8-0.167-1.383-0.217-1.75-0.15c-0.533,0.1-1.033,0.45-1.5,1.05c-0.5,0.667-1.217,1.284-2.15,1.85
+		c-0.934,0.567-1.85,0.934-2.75,1.1c-2.467,0.433-4.45,0.25-5.95-0.55c-0.7-0.4-1.467-1.15-2.3-2.25c-0.6-0.867-1.033-1.567-1.3-2.1
+		c-0.267-0.667-0.483-1.483-0.65-2.45c-0.3-1.467-0.383-2.717-0.25-3.75c0.267-1.9,0.45-3.05,0.55-3.45
+		c0.233-1.233,0.566-2.333,1-3.3C9.25,77.45,9.767,76.4,10,76c0.667-1.233,1.55-2.583,2.65-4.05c1.1-1.434,2.184-2.583,3.25-3.45
+		c0.367-0.3,1.15-0.867,2.35-1.7c0.767-0.566,1.917-1.25,3.45-2.05c1.733-0.933,3.267-1.633,4.6-2.1
+		c2.133-0.733,4.534-1.467,7.2-2.2c0.467-0.1,1.517-0.3,3.15-0.6c0.967-0.233,0.4-0.4-1.7-0.5c-2.434-0.1-4.534-0.3-6.3-0.6
+		c-1.566-0.267-3.383-0.7-5.45-1.3c-2.8-0.8-4.467-1.317-5-1.55c-1.567-0.667-3.2-1.75-4.9-3.25c-1.733-1.533-3-3.1-3.8-4.7
+		c-0.533-1.067-0.967-2.434-1.3-4.1c-0.233-1.067-0.3-2.133-0.2-3.2c0.133-0.833,0.183-1.3,0.15-1.4v-0.6
+		c-2.467-3.233-3.983-5.433-4.55-6.6c-0.533-1.033-0.883-1.833-1.05-2.4c-0.3-0.867-0.466-1.85-0.5-2.95
+		c-0.033-2.367,0.034-4.117,0.2-5.25c0.3-1.034,0.483-1.8,0.55-2.3c0.167-0.867,0.034-1.533-0.4-2c-0.6-0.7-1.133-1.517-1.6-2.45
+		c-0.566-1.133-0.833-2.117-0.8-2.95c0.033-1.333,0.167-2.367,0.4-3.1c0.367-1.267,1.05-2.267,2.05-3
+		C4.417,4.25,6.483,3.317,8.65,2.85z"/>
+    <g>
 
-   <div class="menus menus1">
-      <h1>个人博客
-      </h1>
-      <ul>
-        <div class="bg"></div>
-            <li><span><a href="javascript:;" target="blank">首页</a></span></li>
-            <li><span><a href="xz.html" target="blank">游戏扩列</a></span></li>
-            <li><span><a href="dumplings.html" target="blank">爱好</a></span></li>
-            <li><span><a href="drink.html">番剧</a></span></li>
-
-        </ul>
-        <div class="clear"></div>
+  </defs>
+</svg>
+<section class="background"></section>
+<section class="scene3d">
+    <div class="cube skybox">
+        <var class="scale">
+            <figure class="face front"></figure>
+            <figure class="face back"></figure>
+            <figure class="face right"></figure>
+            <figure class="face left"></figure>
+            <figure class="face top"></figure>
+            <figure class="face bottom"></figure>
+        </var>
     </div>
-
-<script src="js/jquery-1.10.2.js"></script>
-<script src="js/index.js"></script>
-<div class="banenr">
-  <div class="banner-bg">
-    <h3>一个在中国上学的学生</h3>
-  </div></div>
-
-<div class="slider">
-<div class="slider1">
-<div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><a href="dumplings.html" target="new"><img src="picture/jz.jpg"></a></div>
-
-
+    <div class="butterfly_container">
+        <var class="rotate3d">
+            <var class="scale">
+                <var class="translate3d">
+                    <var class="translate3d-1">
+                        <figure class="butterfly">
+                            <svg class="wing left" viewBox="0 0 50 100" class="icon shape-codepen">
+                                <use class="left" xlink:href="#shape-butterfly-1"></use>
+                            </svg>
+                            <svg class="wing right" viewBox="0 0 50 100" class="icon shape-codepen">
+                                <use class="left" xlink:href="#shape-butterfly-1"></use>
+                            </svg>
+                        </figure>
+                    </var>
+                </var>
+            </var>
+        </var>
     </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- Add Arrows -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
-
-  <!-- Swiper JS -->
-
-
-  <!-- Initialize Swiper -->
-  <script>
-    var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-  </script>
-
-
-
-
-
-
-</div>
-</div>
-<hr>
-
-<div class="welcome-text">
-  <h1>欢迎您来到&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 我的个人空间</h1>
-  <h3>&nbsp;</h3>
-  <h3>欢迎你，在此偶遇的陌生人，希望你我的灵魂能够发生有趣的碰撞。</h3>
-</div>
-
-<div class="introduce">个人简介</div>
-<div class="introduce-content">
-  <div id="img-introduce"><img style="width: 100%;height: 100%;" src="picture/01.png"> </div>
-  <div id="text-introduce" class="text-introduce">
-    <div class="text-introducce" id="text1">
-      <div class="text-box" id="text-box1"> ·个人信息·</div>
-
-      <div class="text-box-right" id="box-right1"> <br>     年龄：20   <br>       </div>
+    <div class="butterfly_container"
+         style="margin-top: -150px; margin-left: 140px;
+              -webkit-animation-duration: 5s;
+              -moz-animation-duration: 5s;
+              -ms-animation-duration: 5s;
+              -o-animation-duration: 5s;
+              animation-duration: 5s;">
+        <var class="rotate3d">
+            <var class="scale">
+                <var class="translate3d">
+                    <var class="translate3d-1">
+                        <figure class="butterfly">
+                            <svg class="wing left" viewBox="0 0 50 100"
+                                 style="-webkit-animation-duration: .75s;
+                  -moz-animation-duration: .75s;
+                  -ms-animation-duration: .75s;
+                  -o-animation-duration: .75s;
+                  animation-duration: .75s;">
+                                <use class="left" xlink:href="#shape-butterfly-1"></use>
+                            </svg>
+                            <svg class="wing right" viewBox="0 0 50 100"
+                                 style="-webkit-animation-duration: .75s;
+                  -moz-animation-duration: .75s;
+                  -ms-animation-duration: .75s;
+                  -o-animation-duration: .75s;
+                  animation-duration: .75s;">
+                                <use class="left" xlink:href="#shape-butterfly-1"></use>
+                            </svg>
+                        </figure>
+                    </var>
+                </var>
+            </var>
+        </var>
     </div>
-    <div class="text-introducce" id="text2">
-      <div class="text-box" id="text-box2">  ·吃！·</div>
-      <div class="text-box-right" id="box-right2"> 最爱的食物：炸酱面<dr></dr>
-        最爱的饮料：椰果百香果汁</div>
+    <div class="butterfly_container scale_half"
+         style="margin-top: -10px; margin-left: 50px;
+              -webkit-animation-duration: 5s;
+              -moz-animation-duration: 5s;
+              -ms-animation-duration: 5s;
+              -o-animation-duration: 5s;
+              animation-duration: 5s;">
+        <var class="rotate3d">
+            <var class="scale">
+                <var class="translate3d">
+                    <var class="translate3d-1">
+                        <figure class="butterfly">
+                            <svg class="wing left" viewBox="0 0 50 100"
+                                 style="-webkit-animation-duration: .75s;
+                  -moz-animation-duration: .75s;
+                  -ms-animation-duration: .75s;
+                  -o-animation-duration: .75s;
+                  animation-duration: .75s;">
+                                <use class="left" xlink:href="#shape-butterfly-1"></use>
+                            </svg>
+                            <svg class="wing right" viewBox="0 0 50 100"
+                                 style="-webkit-animation-duration: .75s;
+                  -moz-animation-duration: .75s;
+                  -ms-animation-duration: .75s;
+                  -o-animation-duration: .75s;
+                  animation-duration: .75s;">
+                                <use class="left" xlink:href="#shape-butterfly-1"></use>
+                            </svg>
+                        </figure>
+                    </var>
+                </var>
+            </var>
+        </var>
     </div>
-    <div class="text-introducce" id="text3">
-        <div class="text-box" id="text-box3">·留言·</div>
-        <div class="text-box-right" id="box-right-3">这里是我的个人博客，很高兴你能访问，在这里我会将我自己展现给你，希望你能通过我的自我介绍了解我，不仅是外在看起来的那样，更多的是我的爱好与兴趣，希望能与你有所交集。希望能通过这种方式，遇到志同道合的朋友，在一起聊聊兴趣，在一起娱乐。</div>
-      </div>
-  </div>
+    <div class="butterfly_container scale_half"
+         style="margin-top: 20px;
+              -webkit-animation-duration: 20s;
+              -moz-animation-duration: 20s;
+              -ms-animation-duration: 20s;
+              -o-animation-duration: 20s;
+              animation-duration: 20s;">
+        <var class="rotate3d">
+            <var class="scale">
+                <var class="translate3d">
+                    <var class="translate3d-1">
+                        <figure class="butterfly">
+                            <svg class="wing left" viewBox="0 0 50 100"
+                                 style="-webkit-animation-duration: 1s;
+                  -moz-animation-duration: 1s;
+                  -ms-animation-duration: 1s;
+                  -o-animation-duration: 1s;
+                  animation-duration: 1s;">
+                                <use class="left" xlink:href="#shape-butterfly-1"></use>
+                            </svg>
+                            <svg class="wing right" viewBox="0 0 50 100"
+                                 style="-webkit-animation-duration: 1s;
+                  -moz-animation-duration: 1s;
+                  -ms-animation-duration: 1s;
+                  -o-animation-duration: 1s;
+                  animation-duration: 1s;">
+                                <use class="left" xlink:href="#shape-butterfly-1"></use>
+                            </svg>
+                        </figure>
+                    </var>
+                </var>
+            </var>
+        </var>
+    </div>
+    <div class="butterfly_container scale_half"
+         style="margin-top: 100px; margin-left: 50px;
+              -webkit-animation-duration: 20s;
+              -moz-animation-duration: 20s;
+              -ms-animation-duration: 20s;
+              -o-animation-duration: 20s;
+              animation-duration: 20s;">
+        <var class="rotate3d">
+            <var class="scale">
+                <var class="translate3d">
+                    <var class="translate3d-1">
+                        <figure class="butterfly">
+                            <svg class="wing left" viewBox="0 0 50 100"
+                                 style="-webkit-animation-duration: 1.2s;
+                  -moz-animation-duration: 1.2s;
+                  -ms-animation-duration: 1.2s;
+                  -o-animation-duration: 1.2s;
+                  animation-duration: 1.2s;">
+                                <use class="left" xlink:href="#shape-butterfly-1"></use>
+                            </svg>
+                            <svg class="wing right" viewBox="0 0 50 100"
+                                 style="-webkit-animation-duration: 1.2s;
+                  -moz-animation-duration: 1.2s;
+                  -ms-animation-duration: 1.2s;
+                  -o-animation-duration: 1.2s;
+                  animation-duration: 1.2s;">
+                                <use class="left" xlink:href="#shape-butterfly-1"></use>
+                            </svg>
+                        </figure>
+                    </var>
+                </var>
+            </var>
+        </var>
+    </div>
+    <div class="butterfly_container scale_third"
+         style="margin-top: 150px;
+              -webkit-animation-duration: 20s;
+              -moz-animation-duration: 20s;
+              -ms-animation-duration: 20s;
+              -o-animation-duration: 20s;
+              animation-duration: 20s;">
+        <var class="rotate3d">
+            <var class="scale">
+                <var class="translate3d">
+                    <var class="translate3d-1">
+                        <figure class="butterfly">
+                            <svg class="wing left" viewBox="0 0 50 100"
+                                 style="-webkit-animation-duration: .35s;
+                  -moz-animation-duration: .35s;
+                  -ms-animation-duration: .35s;
+                  -o-animation-duration: .35s;
+                  animation-duration: .35s;">
+                                <use class="left" xlink:href="#shape-butterfly-1"></use>
+                            </svg>
+                            <svg class="wing right" viewBox="0 0 50 100"
+                                 style="-webkit-animation-duration: .35s;
+                  -moz-animation-duration: .35s;
+                  -ms-animation-duration: .53s;
+                  -o-animation-duration: .35s;
+                  animation-duration: .35s;">
+                                <use class="left" xlink:href="#shape-butterfly-1"></use>
+                            </svg>
+                        </figure>
+                    </var>
+                </var>
+            </var>
+        </var>
+    </div>
+    <div class="butterfly_container scale_third"
+         style="margin-top: -250px; margin-left: 300px;
+              -webkit-animation-duration: 4s;
+              -moz-animation-duration: 4s;
+              -ms-animation-duration: 4s;
+              -o-animation-duration: 4s;
+              animation-duration: 4s;">
+        <var class="rotate3d">
+            <var class="scale">
+                <var class="translate3d">
+                    <var class="translate3d-1">
+                        <figure class="butterfly">
+                            <svg class="wing left" viewBox="0 0 50 100"
+                                 style="-webkit-animation-duration: .45s;
+                  -moz-animation-duration: .45s;
+                  -ms-animation-duration: .45s;
+                  -o-animation-duration: .45s;
+                  animation-duration: .45s;">
+                                <use class="left" xlink:href="#shape-butterfly-1"></use>
+                            </svg>
+                            <svg class="wing right" viewBox="0 0 50 100"
+                                 style="-webkit-animation-duration: .45s;
+                  -moz-animation-duration: .45s;
+                  -ms-animation-duration: .45s;
+                  -o-animation-duration: .45s;
+                  animation-duration: .45s;">
+                                <use class="left" xlink:href="#shape-butterfly-1"></use>
+                            </svg>
+                        </figure>
+                    </var>
+                </var>
+            </var>
+        </var>
+    </div>
+</section>
+<div class="menu showmsg">
+    <a class="animate-init click" rel="noopener noreferrer">Blog</a>
+    <a class="animate-init click" rel="external nofollow noopener noreferrer">Github</a>
+    <a class="animate-init" rel="external nofollow noopener noreferrer">@KronChan</a>
+    <div class="location">
+        <i class="location-icon"></i>
+        <span class="location-text animate-init">Wuhan - China</span>
+    </div>
 </div>
-
-<hr>
-
-<div class="ms-ex">
-<div class="ms-exhibition">
-  <p>照片墙</p></div>
-  <div class="scroll">
-    <marquee direction="right" behavior="alternate" scrolldelay="200" onmouseover="stop()" onmouseout="start()">
-      <table width="2400" border="0" cellspacing="20" cellpadding="0">
-        <tr>
-          <td class="scroll-td"><img style="height: 100%;" src="picture/01.png"></td>
-          <td class="scroll-td"><img style="height: 100%;" src="picture/01.png"></td>
-          <td class="scroll-td"><img style="height: 100%;" src="picture/01.png"></td>
-          <td class="scroll-td"><img style="height: 100%;" src="picture/01.png"></td>
-          <td class="scroll-td"><img style="height: 100%;" src="picture/01.png"></td>
-          <td class="scroll-td"><img style="height: 100%;" src="picture/01.png"></td>
-          <td class="scroll-td"><img style="height: 100%;" src="picture/01.png"></td>
-          <td class="scroll-td"><img style="height: 100%;" src="picture/01.png"></td>
-        </tr>
-        <tr>
-          <td class="scroll-td-text">近期</td>
-          <td class="scroll-td-text">疫情锻炼</td>
-          <td class="scroll-td-text">懵</td>
-          <td class="scroll-td-text">高考完剃毛</td>
-          <td class="scroll-td-text">毕业聚餐</td>
-          <td class="scroll-td-text">阴间万圣节特效</td>
-          <td class="scroll-td-text">躺平</td>
-          <td class="scroll-td-text">军训期</td>
-        </tr>
-      </table>
-    </marquee>
+<div class="relocating">
+    Navigating to: <span class="relocate-location"></span>...
 </div>
-</div> 
-
-<footer>
-  <div id="footer">
-
-            <a style="color: #fff;">个人版权</a>
-            <p></p>
-  </div>
-
-</footer>
 </body>
+<script type="text/javascript" src="js/index.js"></script>
+<script>
+    $(document).ready(function () {
+        var delay = 1;
+        var DELAY_STEP = 200;
+        var animationOptions = {opacity: 1, top: 0};
+
+        $('h1').animate(animationOptions).promise()
+            .pipe(animateMain)
+            .pipe(animateLocationIcon);
+
+        function animateMain() {
+            var dfd = $.Deferred();
+            var els = $('.animate-init');
+            var size = els.size();
+
+            els.each(function (index, el) {
+                delay++;
+                $(el).delay(index * DELAY_STEP)
+                    .animate(animationOptions);
+                (size - 1 === index) && dfd.resolve();
+            });
+            return dfd.promise();
+        }
+
+        function animateLocationIcon() {
+            $('.location-icon').delay(delay * DELAY_STEP).animate({
+                opacity: 1,
+                top: 0
+            }).promise().done(animationQuote);
+        }
+
+        function animationQuote() {
+        }
+
+        $(".click:contains(Blog)").on('click', function (event) {
+            $('.relocate-location').text('Blog Home Page');
+            $('.relocating').css('opacity', 1);
+
+            window.setTimeout(function () {
+                window.location.href = 'http://blog.wuwii.com';
+            }, 1000);
+        });
+        $(".click:contains(Github)").on('click', function (event) {
+            $('.relocate-location').text('My Github Page');
+            $('.relocating').css('opacity', 1);
+
+            window.setTimeout(function () {
+                window.location.href = 'https://github.com/kaimz';
+            }, 1000);
+        });
+    });
+</script>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-
-
-
-
-
-
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:200 }}
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-</div>
-<hr>
-{% endfor %}
-
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
-{% endif %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
--->
