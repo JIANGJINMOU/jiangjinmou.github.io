@@ -5,10 +5,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Blog">
-    <meta name="description" content="Git命令大全配置
-git init # 初始化本地git仓库（创建新仓库）
+    <meta name="description" content="Git命令配置git init # 初始化本地git仓库（创建新仓库）
 git config –global user.name “xxx” # 配置用户名
-git config –global user.email “&amp;#120;&amp;">
+git config –global user.email “&amp;#120;&amp;#12">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -152,6 +151,17 @@ git config –global user.email “&amp;#120;&amp;">
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/book" class="waves-effect waves-light">
+      
+      <i class="fas fa-book" style="zoom: 0.6;"></i>
+      
+      <span>Book</span>
+    </a>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -254,6 +264,17 @@ git config –global user.email “&amp;#120;&amp;">
 			    <i class="fa-fw fas fa-address-book"></i>
 			
 			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/book" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-book"></i>
+			
+			Book
 		</a>
           
         </li>
@@ -378,7 +399,7 @@ git config –global user.email “&amp;#120;&amp;">
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-14
+                    2023-11-10
                 </div>
                 
 
@@ -399,10 +420,9 @@ git config –global user.email “&amp;#120;&amp;">
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Git命令大全<br>配置</p>
-<p>git init # 初始化本地git仓库（创建新仓库）</p>
+                <h1 id="Git命令"><a href="#Git命令" class="headerlink" title="Git命令"></a>Git命令</h1><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>git init # 初始化本地git仓库（创建新仓库）</p>
 <p>git config –global user.name “xxx” # 配置用户名</p>
-<p>git config –global user.email “<a href="mailto:&#120;&#120;&#x78;&#x40;&#120;&#120;&#x78;&#x2e;&#99;&#x6f;&#x6d;">&#120;&#120;&#x78;&#x40;&#120;&#120;&#x78;&#x2e;&#99;&#x6f;&#x6d;</a>“ # 配置邮件</p>
+<p>git config –global user.email “<a href="mailto:&#120;&#120;&#x78;&#64;&#x78;&#120;&#x78;&#46;&#99;&#111;&#109;">&#120;&#120;&#x78;&#64;&#x78;&#120;&#x78;&#46;&#99;&#111;&#109;</a>“ # 配置邮件</p>
 <p>git config –global color.ui true # git status等命令自动着色</p>
 <p>git config –global color.status auto</p>
 <p>git config –global color.diff auto</p>
@@ -410,8 +430,8 @@ git config –global user.email “&amp;#120;&amp;">
 <p>git config –global color.interactive auto</p>
 <p>git config –global http.proxy “socks&#x2F;http:host:port”</p>
 <p>git config –global https.proxy “socks&#x2F;http:host:port”</p>
-<p>git config –global –unset http.proxy<br>常用</p>
-<p>git clone git+ssh:&#x2F;&#x2F;<a href="mailto:&#103;&#x69;&#116;&#x40;&#49;&#57;&#x32;&#46;&#x31;&#x36;&#56;&#x2e;&#x35;&#51;&#x2e;&#x31;&#54;&#56;">&#103;&#x69;&#116;&#x40;&#49;&#57;&#x32;&#46;&#x31;&#x36;&#56;&#x2e;&#x35;&#51;&#x2e;&#x31;&#54;&#56;</a>&#x2F;VT.git # clone远程仓库</p>
+<p>git config –global –unset http.proxy</p>
+<h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><p>git clone git+ssh:&#x2F;&#x2F;<a href="mailto:&#103;&#105;&#116;&#x40;&#49;&#57;&#x32;&#x2e;&#x31;&#x36;&#56;&#46;&#x35;&#51;&#46;&#x31;&#x36;&#x38;">&#103;&#105;&#116;&#x40;&#49;&#57;&#x32;&#x2e;&#x31;&#x36;&#56;&#46;&#x35;&#51;&#46;&#x31;&#x36;&#x38;</a>&#x2F;VT.git # clone远程仓库</p>
 <p>git status # 查看当前版本状态（是否修改）</p>
 <p>git add xyz # 添加xyz文件至index</p>
 <p>git add . # 增加当前子目录下所有更改过的文件至index</p>
@@ -444,7 +464,8 @@ git config –global user.email “&amp;#120;&amp;">
 <p>git diff HEAD – .&#x2F;lib # 比较与HEAD版本lib目录的差异</p>
 <p>git diff origin&#x2F;master..master # 比较远程分支master上有本地分支master上没有的</p>
 <p>git diff origin&#x2F;master..master –stat # 只显示差异的文件，不显示具体内容</p>
-<p>git remote add origin git+ssh:&#x2F;&#x2F;<a href="mailto:&#103;&#105;&#x74;&#x40;&#49;&#57;&#50;&#46;&#49;&#54;&#56;&#x2e;&#x35;&#x33;&#x2e;&#x31;&#54;&#x38;">&#103;&#105;&#x74;&#x40;&#49;&#57;&#50;&#46;&#49;&#54;&#56;&#x2e;&#x35;&#x33;&#x2e;&#x31;&#54;&#x38;</a>&#x2F;VT.git # 增加远程定义（用于push&#x2F;pull&#x2F;fetch）<br>分支操作<br>BASH<br>git branch # 显示本地分支</p>
+<p>git remote add origin git+ssh:&#x2F;&#x2F;<a href="mailto:&#103;&#105;&#x74;&#64;&#49;&#x39;&#50;&#46;&#49;&#54;&#56;&#46;&#53;&#51;&#46;&#x31;&#x36;&#x38;">&#103;&#105;&#x74;&#64;&#49;&#x39;&#50;&#46;&#49;&#54;&#56;&#46;&#53;&#51;&#46;&#x31;&#x36;&#x38;</a>&#x2F;VT.git # 增加远程定义（用于push&#x2F;pull&#x2F;fetch）</p>
+<h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><p>git branch # 显示本地分支</p>
 <p>git branch –contains 50089 # 显示包含提交50089的分支</p>
 <p>git branch -a # 显示所有分支</p>
 <p>git branch -r # 显示所有原创分支</p>
@@ -459,21 +480,21 @@ git config –global user.email “&amp;#120;&amp;">
 <p>git checkout -b devel origin&#x2F;develop # 从远程分支develop创建新本地分支devel并检出</p>
 <p>git checkout – README # 检出head版本的README文件（可用于修改错误回退）</p>
 <p>git merge origin&#x2F;master # 合并远程master分支至当前分支</p>
-<p>git cherry-pick ff44785404a8e # 合并提交ff44785404a8e的修改<br>远程操作<br>BASH</p>
-<p>git push origin master # 将当前分支push到远程master分支</p>
+<p>git cherry-pick ff44785404a8e # 合并提交ff44785404a8e的修改</p>
+<h2 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h2><p>git push origin master # 将当前分支push到远程master分支</p>
 <p>git push origin :hotfixes&#x2F;BJVEP933 # 删除远程仓库的hotfixes&#x2F;BJVEP933分支</p>
 <p>git push –tags # 把所有tag推送到远程仓库</p>
 <p>git fetch # 获取所有远程分支（不更新本地分支，另需merge）</p>
 <p>git fetch –prune # 获取所有原创分支并清除服务器上已删掉的分支</p>
-<p>git pull origin master # 获取远程分支master并merge到当前分支<br>其他<br>BASH</p>
-<p>git rebase</p>
+<p>git pull origin master # 获取远程分支master并merge到当前分支</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>git rebase</p>
 <p>git branch -d hotfixes&#x2F;BJVEP933 # 删除分支hotfixes&#x2F;BJVEP933（本分支修改已合并到其他分支）</p>
 <p>git branch -D hotfixes&#x2F;BJVEP933 # 强制删除分支hotfixes&#x2F;BJVEP933</p>
 <p>git ls-files # 列出git index包含的文件</p>
 <p>git show-branch # 图示当前分支历史</p>
 <p>git show-branch –all # 图示所有分支历史</p>
 <p>git whatchanged # 显示提交历史对应的文件修改</p>
-<p>git revert dfb02e6e4f2f7b573337763e5c0013802e392818 # 撤销提交dfb02e6e4f2f7b573337763e5c0013802e392818</p>
+<p>git revert dfb02e6e4f2f7b573337763e5c0013802e392818 # 撤销提交</p>
 <p>git ls-tree HEAD # 内部命令：显示某个git对象</p>
 <p>git rev-parse v2.0 # 内部命令：显示某个ref对于的SHA1 HASH</p>
 <p>git show HEAD@{5}</p>
@@ -515,7 +536,7 @@ git config –global user.email “&amp;#120;&amp;">
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2023/11/14/Git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/">http://example.com/2023/11/14/Git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/</a>
+                    <a href="http://example.com/2023/11/10/Git%E5%91%BD%E4%BB%A4/">http://example.com/2023/11/10/Git%E5%91%BD%E4%BB%A4/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -629,48 +650,9 @@ git config –global user.email “&amp;#120;&amp;">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
-            <div class="card">
-                <a href="/2023/11/14/Git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-14
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            jiangjinmou
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-            </div>
-        </div>
-        
-        
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
                 <a href="/2023/11/14/hello-world/">
                     <div class="card-image">
@@ -688,8 +670,45 @@ git config –global user.email “&amp;#120;&amp;">
                         
                     </div>
                     <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-14
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            jiangjinmou
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/11/10/Git%E5%91%BD%E4%BB%A4/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-10
                             </span>
                         <span class="publish-author">
                             
@@ -699,6 +718,7 @@ git config –global user.email “&amp;#120;&amp;">
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -881,7 +901,7 @@ git config –global user.email “&amp;#120;&amp;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2023</span>
+                <span id="year">2023</span>
             
             <a href="/about" target="_blank">jiangjinmou</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
