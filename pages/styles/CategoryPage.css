@@ -1,0 +1,52 @@
+/* styles/CategoryPage.css */
+.category-container {
+    display: flex;
+  }
+  
+  .tags {
+    padding-left: 30px;
+    padding-top: 100px;
+    width: 250px;
+    float: left;
+    text-align: center;
+  }
+  
+  .tag {
+    background: rgb(149, 178, 255);
+    color: #fff;
+    border-radius: 10px;
+    padding: 3px 8px;
+    font-size: 14px;
+    margin-right: 4px;
+    line-height: 35px;
+    cursor: pointer;
+  }
+  
+  .tag:hover {
+    background: #eee4ad;
+    color: #444;
+  }
+  
+  .introduce {
+    padding: 25px 0 0 35px;
+    width: 480px;
+    float: left;
+  }
+  
+  .posts {
+    padding-left: 50px;
+    width: calc(100% - 330px);
+  }
+  
+  .post {
+    margin-bottom: 30px;
+  }
+  
+  .post h2 {
+    margin-bottom: 10px;
+  }
+  
+  .post p {
+    color: #707070;
+  }
+  

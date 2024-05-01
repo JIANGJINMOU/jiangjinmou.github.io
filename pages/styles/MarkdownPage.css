@@ -1,0 +1,177 @@
+
+/* MarkdownPage.css */
+.markdown-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 标题样式 */
+.markdown-content h1 {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.markdown-content h2 {
+  color: #666;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.markdown-content h3 {
+  color: #999;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.markdown-content h4 {
+  color: #ccc;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.markdown-content h5 {
+  color: #ccc;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.markdown-content h6 {
+  color: #ccc;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* 段落样式 */
+.markdown-content p {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* 列表样式 */
+.markdown-content ul,
+.markdown-content ol {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* 链接样式 */
+.markdown-content a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* 图片样式 */
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+/* 代码块样式 */
+.markdown-content pre {
+  position: relative;
+  background-color: #f5f5;
+}
+
+/* 段落样式 */
+.markdown-content p {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* 列表样式 */
+.markdown-content ul,
+.markdown-content ol {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* 链接样式 */
+.markdown-content a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* 图片样式 */
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+/* 代码块样式 */
+.markdown-content pre {
+  position: relative;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.markdown-content pre::after {
+  content: 'Copy';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 12px;
+  background-color: #a8b0b8;
+  color: #fff;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.markdown-content pre::after:hover {
+  background-color: #0056b3;
+}
+
+/* 表格样式 */
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.markdown-content th,
+.markdown-content td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+/* 代码样式 */
+.markdown-content code {
+  font-family: monospace;
+  font-size: 14px;
+}
+
+/* 强调样式 */
+.markdown-content em {
+  font-style: italic;
+}
+
+/* 删除线样式 */
+.markdown-content del {
+  text-decoration: line-through;
+}
+
+/* 加粗样式 */
+.markdown-content strong {
+  font-weight: bold;
+}
+
+/* 引用样式 */
+.markdown-content blockquote {
+  font-style: italic;
+  color: #999;
+}
+
+/* 水平线样式 */
+.markdown-content hr {
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}

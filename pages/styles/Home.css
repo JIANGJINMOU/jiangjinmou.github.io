@@ -1,0 +1,264 @@
+/* styles/Home.css */
+
+/* 全局样式 */
+:root {
+  --body-color: #e4e9f7;
+  --shell-color: #fff;
+  --primary-color: #165e51;
+  --primary-color-light: #f6f5ff;
+  --toggle-color: #ddd;
+  --text-color: #707070;
+}
+
+/* 深色主题 */
+.container.dark {
+  --body-color: #202224;
+  --shell-color: #171717;
+  --primary-color: #3a3b3c;
+  --text-color: #ccc;
+}
+
+/* 容器样式 */
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--body-color);
+  transition: all 0.3s ease;
+}
+
+/* 头部样式 */
+header {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.image-text {
+  display: flex;
+  align-items: center;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.image,
+.icon {
+  min-width: 60px;
+  border-radius: 6px;
+}
+
+.icon {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 300 23px "";
+}
+
+.text {
+  color: var(--text-color);
+  font: 500 17px;
+  white-space: nowrap;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+/* 关闭状态下的导航栏 */
+.shell.close .text {
+  opacity: 0;
+}
+
+/* 关闭状态下的图标 */
+.shell.close .toggle {
+  transform: translateY(-50%) rotate(0deg);
+}
+
+/* 导航栏样式 */
+.shell {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  padding: 10px 14px;
+  background: var(--shell-color);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+/* 导航链接样式 */
+.shell li {
+  height: 50px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.shell li a {
+  list-style: none;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.shell li a:hover {
+  background-color: var(--primary-color);
+}
+
+.shell li a:hover .icon,
+.shell li a:hover .text {
+  color: var(--shell-color);
+}
+
+/* 菜单栏样式 */
+.menu-bar {
+  height: calc(100% - 55px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: scroll;
+}
+
+/* 模式切换按钮样式 */
+.menu-bar .mode {
+  border-radius: 6px;
+  background-color: var(--primary-color-light);
+  position: fixed;
+  bottom: 20px;
+  left: 80px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+
+/* 切换开关样式 */
+.switch {
+  position: relative;
+  height: 22px;
+  width: 40px;
+  border-radius: 25px;
+  background-color: var(--toggle-color);
+  transition: all 0.3s ease;
+}
+
+.switch::before {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background-color: var(--shell-color);
+  transition: all 0.3s ease;
+}
+
+/* 夜间模式下切换按钮样式 */
+.dark .switch::before {
+  left: 20px;
+}
+
+/* 隐藏元素样式 */
+.hide {
+  display: none;
+}
+
+/* .tfc {
+  margin-top: 20px;
+  margin-left: auto;
+  font-size: 14px;
+  color: var(--text-color);
+  width: 70%;
+} */
+/* .tfc {
+  margin-top: 20px;
+  margin-left: auto;
+  width: 70%;
+  font-size: 14px;
+  color: var(--text-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+.tfc {
+  width: 70%;
+  font-size: 14px;
+  color: var(--text-color);
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+
+/* 底部样式 */
+footer {
+  margin-top: auto;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: var(--text-color);
+  background-color: var(--shell-color);
+}
+
+/* 时间样式 */
+.time {
+  color: var(--text-color); /* 默认为深色 */
+  transition: all 0.3s ease;
+}
+
+/* 夜间模式下时间样式 */
+.container.dark .time {
+  color: #fff; /* 切换为白色 */
+}
+
+/* 切换按钮样式 */
+.toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  height: 50px;
+  width: 50px;
+  background-color: var(--primary-color); /* 默认为主题色 */
+  color: var(--shell-color); /* 默认为背景色 */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+/* 夜间模式下切换按钮样式 */
+.container.dark .toggle {
+  background-color: #000; /* 切换为黑色 */
+}
+
+/* 夜间模式下切换按钮图标样式 */
+.container.dark .toggle i {
+  color: #fff; /* 切换为白色 */
+}
