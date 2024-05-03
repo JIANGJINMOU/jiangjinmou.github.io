@@ -53,10 +53,10 @@ const About: React.FC = () => {
           <div className="about-content">
             <h2>网站参考：</h2>
             <p>
-              <a href="https://lzxjack.top/">https://lzxjack.top/</a>
-              <a href="https://www.cnblogs.com/">https://www.cnblogs.com/</a>
-              <a href="https://www.runoob.com/">https://www.runoob.com/</a>
-              <a href="https://www.bilibili.com/">https://www.bilibili.com/</a>
+              <a href="https://lzxjack.top/">https://lzxjack.top/</a><br />
+              <a href="https://www.cnblogs.com/">https://www.cnblogs.com/</a><br />
+              <a href="https://www.runoob.com/">https://www.runoob.com/</a><br />
+              <a href="https://www.bilibili.com/">https://www.bilibili.com/</a><br />
             </p>
           </div>
         </div>
