@@ -1,0 +1,804 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>vim | BLOG</title><meta name="author" content="jiangjinmou"><meta name="copyright" content="jiangjinmou"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="vim vim 总共有 6 种基本模式，常用的有四个模式，：   正常模式(Normal-mode) 1(Normal mode)  也叫默认模式。 进入 vim 时默认的模式所有输入的键都直接对应着命令 也被叫做命令模式.    插入模式(Insert-mode) 1(Insert mode)  任何键盘录入都会插入到当前文档中    命令行模式 (Command-mode) 1(Comman">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vim">
+<meta property="og:url" content="https://jiangjinmou.github.io/2024/05/16/vim/index.html">
+<meta property="og:site_name" content="BLOG">
+<meta property="og:description" content="vim vim 总共有 6 种基本模式，常用的有四个模式，：   正常模式(Normal-mode) 1(Normal mode)  也叫默认模式。 进入 vim 时默认的模式所有输入的键都直接对应着命令 也被叫做命令模式.    插入模式(Insert-mode) 1(Insert mode)  任何键盘录入都会插入到当前文档中    命令行模式 (Command-mode) 1(Comman">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jiangjinmou.github.io/medias/featureimages/23.jpg">
+<meta property="article:published_time" content="2024-05-16T15:40:53.880Z">
+<meta property="article:modified_time" content="2024-05-17T15:16:27.656Z">
+<meta property="article:author" content="jiangjinmou">
+<meta property="article:tag" content="tool">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jiangjinmou.github.io/medias/featureimages/23.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://jiangjinmou.github.io/2024/05/16/vim/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":true,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'vim',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-05-17 23:16:27'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/HH.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/medias/featureimages/23.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="BLOG"><span class="site-name">BLOG</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">vim</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-16T15:40:53.880Z" title="发表于 2024-05-16 23:40:53">2024-05-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-17T15:16:27.656Z" title="更新于 2024-05-17 23:16:27">2024-05-17</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">10.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>34分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h1 id="vim"><a class="markdownIt-Anchor" href="#vim"></a> vim</h1>
+<p>vim 总共有 6 种基本模式，常用的有四个模式，：</p>
+<ul>
+<li>
+<p>正常模式(Normal-mode)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(Normal mode)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>也叫默认模式。</li>
+<li>进入 <code>vim</code> 时默认的模式所有输入的键都直接对应着命令</li>
+<li>也被叫做命令模式.</li>
+</ul>
+</li>
+<li>
+<p>插入模式(Insert-mode)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(Insert mode)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>任何键盘录入都会插入到当前文档中</li>
+</ul>
+</li>
+</ul>
+<p>命令行模式 (Command-mode)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(Command-Line mode)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>
+<p>可以窗口下方执行一条命令</p>
+</li>
+<li>
+<p>一般是通过 : 执行单行命令</p>
+</li>
+<li>
+<p>通过 / 和 ? 进行搜索</p>
+</li>
+<li>
+<p>可视模式(Visual-mode)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(Visual mode)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>很像正常模式</li>
+<li>但是移动命令会改变选中的一块高亮区域</li>
+<li>执行的命令会对选定范围进行</li>
+</ul>
+</li>
+<li>
+<p>选择模式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(Select mode)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以用鼠标或光标键高亮选择文本</li>
+<li>任何输入都会替换选择的高亮文本</li>
+<li>并进入插入模式</li>
+</ul>
+</li>
+<li>
+<p>Ex mode</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(多行命令执行模式)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Ex</code> 指的是 <code>Execute</code></li>
+<li>在 <code>Normal</code> 正常模式下使用 gQ 进入</li>
+<li>使用 <code>:visual</code> 退出</li>
+</ul>
+</li>
+</ul>
+<hr />
+<ul>
+<li>
+<p>进入 <code>vim</code> 之后，我们面对的是正常模式</p>
+</li>
+<li>
+<p>输入半角 : 进入 <code>命令行</code> 模式</p>
+</li>
+<li>
+<p>什么不会，就</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:help</span><br></pre></td></tr></table></figure>
+<ul>
+<li>比如说 <code>:qa</code> 不会</li>
+<li>就 <code>:help</code> 这个 <code>:qa</code></li>
+<li>输入 <code>:help :qa</code></li>
+<li><code>:help</code> 的对象是 <code>:qa</code>，中间留了一个空格</li>
+<li>回车 之后执行命令</li>
+</ul>
+</li>
+<li>
+<p><code>:qa[ll]</code> 就是退出全部窗口，也可以用 <code>:q</code> 这种简写形式来退出</p>
+</li>
+<li>
+<p><code>:h :q</code> 查询 关于 <code>:q</code> 的帮助</p>
+</li>
+</ul>
+<blockquote>
+<p>击键手法：左手的小拇指先按下Shift，右手的小拇指再按一下，左手小拇指抬起</p>
+</blockquote>
+<ul>
+<li>
+<p><code>:f[ile]</code>可以在状态栏看到当前文件的信息，使用 ctrl+G 也有同样的作用</p>
+</li>
+<li>
+<p>ctrl+] 就可以<strong>跳入链接</strong>，ctrl+o 可以<strong>跳出链接</strong></p>
+</li>
+<li>
+<p>想在 vim 中使用鼠标控制，<code>:set mouse=a</code></p>
+<ul>
+<li>我们可以使用鼠标移动光标</li>
+<li>使用滚轮可以翻页</li>
+<li>还可以使用鼠标点击相关的主题链接</li>
+</ul>
+</li>
+<li>
+<p>i 在当前的光标之前插入</p>
+</li>
+<li>
+<p>I 在本行文本的最前面插入</p>
+</li>
+<li>
+<p>. 重做</p>
+</li>
+<li>
+<p>u 撤销</p>
+</li>
+<li>
+<p>ctrl+r 还原</p>
+</li>
+<li>
+<p><code>i</code> 和 <code>a</code> 都是 <code>Insert mode commands</code></p>
+</li>
+<li>
+<p>插入位置</p>
+<ul>
+<li><code>i</code> 是 <code>before cursor</code> 在光标前插</li>
+<li><code>a</code> 是 <code>after cursor</code> 在光标后插</li>
+</ul>
+</li>
+<li>
+<p>对应命令</p>
+<ul>
+<li>
+<p><code>i</code> 意思是 <code>insert</code></p>
+</li>
+<li>
+<p><code>a</code> 意思是 <code>append</code></p>
+<ul>
+<li>o在
+<ul>
+<li>当前行 <strong>下面</strong> 插入一个空行</li>
+<li>然后切换到插入模式</li>
+</ul>
+</li>
+<li>O
+<ul>
+<li>在当前行 <strong>上面</strong> 插入一个空行</li>
+<li>然后切换到插入模式</li>
+</ul>
+</li>
+<li>一个上面 👆，一个 👇</li>
+</ul>
+</li>
+<li>
+<p>如果我们保存了当前文件 <code>oeasy.log</code></p>
+</li>
+<li>
+<p>然后退出了 vi</p>
+</li>
+<li>
+<p>然后重新进入 vi</p>
+</li>
+<li>
+<p>在一个未命名文件中写一些东西，比如</p>
+<ul>
+<li><code>oeasyo2zo3z</code></li>
+</ul>
+</li>
+<li>
+<pre class="highlight"><code class="">:w &gt;&gt; oeasy.log
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  - 这就是用追加的方式去写这个log文件</span><br><span class="line">  - log中的东西还都有</span><br><span class="line">  - 最新的追加在最后</span><br><span class="line"></span><br><span class="line">- 与</span><br><span class="line"></span><br><span class="line">   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+:w oeasy.log
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">     </span><br><span class="line">  </span><br><span class="line">    对比</span><br><span class="line">  </span><br><span class="line">    - `:w oeasy` 是覆盖写入</span><br><span class="line">    - `&gt;&gt;` 意味着追加写入</span><br><span class="line">  </span><br><span class="line">  - 试试追加</span><br><span class="line">  </span><br><span class="line">    - 我们可以新建一个</span><br><span class="line">  </span><br><span class="line">    - 然后追加一些东西写入`oeasy.txt`</span><br><span class="line">  </span><br><span class="line">    - 然后我们看看这个`oeasy.txt`</span><br><span class="line">  </span><br><span class="line">    - 是不是写进去了</span><br><span class="line">    </span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">​      </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">VIM 有一个很重要的按键需要一开始就做出说明，那就是键盘中的 &lt;ESC&gt; ,这个按键用来切换模式，该按键可以快速切换到正常模式.&lt;ESC&gt; 这个按键有点特殊，它脱离了主键盘区，每次操作这个按键的时候都会有些蛮烦。估计很多使用 VIM 的人都会有这个痛点，因此有了一个解决方案，control + [ 这两个按键取代 &lt;ESC&gt;。</span><br><span class="line"></span><br><span class="line">VIM 有一个配置文件，在 linux 系统中，该配置文件是 .vimrc , 该文件位于 home 目录下面 ，如果该文件不存在可以手动创建一个。</span><br><span class="line"></span><br><span class="line">.vimrc 可以有很多配置，例如显示行号，快捷键配置，插件配置等等。VIM 很多个性化的设置都离不开这个配置文件。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">```sh</span><br><span class="line">inoremap jj &lt;Esc&gt;  #将ESC键映射为两次j键</span><br></pre></td></tr></table></figure>
+
+
+
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<p>这个配置是将 <ESC> 功能键用 jj (连续按两次 j) 来取代。这个配置可以很大程度提高 VIM 的使用效率，下文的讲解 zempty 都会用 jj 来取代键盘上的 <ESC>。</p>
+<p>现在假如有一个文件 file1 ,只需要在文件前面加上 vim 关键字就好：</p>
+<p>vim file1</p>
+<p>上面这个命令将会打开 file1 这个文件，file1 是指你具体操作的文件名。</p>
+<p>如何用 VIM 一次性打开多个文件呢？</p>
+<p>现在有多个文件 file1 ，file2 , … ,filen.</p>
+<p>现在举例打开两个文件 file1，file2</p>
+<p>vim file1 file2</p>
+<p>该方式打开文件，显示屏默认显示第一个文件也就是 file1，如何进行文件间的切换呢？VIM 的正常模式下（参考上文关于正常模式的描述）按下键盘上的冒号 ：这时会在显示屏底部出现冒号 ：（进入了 VIM 的命令模式），然后在输入 ls ，屏幕上会出现打开的所有文件的序号和文件名，我们继续输入冒号 ： ，然后输入 bn (这里的 n需要做一个解释并不是键盘上的 n ,而是文件序号的代指，如 b1 代表显示屏上切换到第一个文件，b2 代表显示屏上切换到第二个文件)。</p>
+<p>:ls</p>
+<p>上面这个命令将会列出 VIM 打开的所有文件。</p>
+<p>:b2</p>
+<p>上面的这个命令将会在显示屏上显示第二个文件。</p>
+<p>如何在显示屏上一次性显示多个文件呢？</p>
+<p>VIM 可以实现分屏操作，一个屏幕被多个文件给分占，有左右和上下两种分屏的方式。</p>
+<p>左右分屏如下操作：</p>
+<p>vim -On file1 file2 … filen</p>
+<p>这里的 n （ n 是要打开的具体文件的数目：1,2,3 …）是代表有几个文件需要分屏，从左至右依次显示 n 个文件。</p>
+<p>上下分屏如下操作：</p>
+<p>vim -on file1 file2 … filen</p>
+<p>这个命令跟上一个命令不同的是其中的参数 -on（ n 是要打开的具体文件的数目：1,2,3 …） 中的 o 是小写，这样将会上下依次显示 n 个文件。</p>
+<p>VIM 如何进行分屏操作呢？</p>
+<p>请记住一个重要的组合键 Ctrl + w ,操作分屏离不开这个组合键(这里的组合键可没有 + ，只是 Ctrl 和 w 组合实现一个动能,下文谈到的组合健都这样描述 )。</p>
+<p>按住组合键 Ctrl + w ，然后在按下 s</p>
+<p>Ctrl + w s</p>
+<p>上面这个命令将会上下分割当前打开的文件。</p>
+<p>按住冒号：，紧接着输入 sp ,在键入文件名，如下：</p>
+<p>:sp file</p>
+<p>上面的这个命令将会上下分割当前文件和新打开的 file 。</p>
+<p>按住组合键 Ctrl + w ,然后在按下 v</p>
+<p>Ctrl +w v</p>
+<p>上面的这个命令将会左右分割当前的文件</p>
+<p>按住冒号 ：，紧接着输入 vsp ,在键入文件名称，如下：</p>
+<p>:vsp file</p>
+<p>上面的这个命令将会左右分割当前打开的文件和新打开的文件 file 。</p>
+<p>分屏以后如何在文件间切换光标，和移动分屏？</p>
+<p>1.切换左右分屏的光标 ：</p>
+<p>Ctrl + w h</p>
+<p>将当前光标定位到左边的屏幕</p>
+<p>Ctrl + w l</p>
+<p>将当前的光标定位到右边的屏幕</p>
+<p>2.移动左右分屏 ：</p>
+<p>Ctrl + w H</p>
+<p>将当前的分屏移动到左边</p>
+<p>Ctrl + w L</p>
+<p>将当前的分屏移动到右边</p>
+<p>3.切换上下分屏的光标 ：</p>
+<p>Ctrl + w j</p>
+<p>将当前的光标移动到下面的分屏</p>
+<p>Ctrl + w k</p>
+<p>将当前光标移动到上面的分屏</p>
+<p>4.移动上下分屏：</p>
+<p>Ctrl + w J</p>
+<p>将当前的分屏移动到下面的分屏</p>
+<p>Ctrl + w K</p>
+<p>将当前的分屏移动到上面的分屏</p>
+<p>如何关闭分屏呢？</p>
+<p>Ctrl + w c</p>
+<p>上面这个命令是关闭当前的分屏</p>
+<p>Ctrl + w q</p>
+<p>上面的这个命令也是关闭当前的分屏，如果是最后一个分屏将会退出 VIM 。</p>
+<p>VIM 的退出</p>
+<p>VIM 的最终操作就是 VIM 的退出，如何进行 VIM 的有效退出呢？下面针对 VIM 的退出来做一下说明：</p>
+<p>:w</p>
+<p>保存当前对文件的修改，但是不退出文件。</p>
+<p>:w!</p>
+<p>强制保存但是不退出文件。</p>
+<p>:w file</p>
+<p>保存当前的文件修改到 file 文件当中。</p>
+<p>:q!</p>
+<p>退出文件，对文件的修改不做保存。</p>
+<p>:qa!</p>
+<p>退出所有的文件，对所有的文件修改都不做保存。</p>
+<p>:wq</p>
+<p>退出文件并保存对文件的修改。</p>
+<p>:x</p>
+<p>退出文件并保存对文件的修改。</p>
+<p>:e file</p>
+<p>打开另一个文件。</p>
+<p>:e!</p>
+<p>放弃对文件的所有修改，恢复文件到上次保存的位置。</p>
+<p>:saveas file</p>
+<p>另存为 file。</p>
+<p>:bn 和 :bp</p>
+<p>当打开多个文件的时候可以输入 :bn 和 :bp 进行上一个文件或者下一个文件的切换。</p>
+<p>以上的命令都是在命令行模式下的操作（也就是输入冒号 ：紧接着输入相应的字符命令如 :q! 就会执行退出操作）。 zempty 在这里要推荐一个常用的操作就是 ZZ , 当你对文件进行了修改，需要保存退出，那么可以在键盘上快速的键入两个大写的 Z (ZZ),这样文件就会快速的保存退出了 。</p>
+<h2 id="输入模式"><a class="markdownIt-Anchor" href="#输入模式"></a> 输入模式</h2>
+<p>编辑器的主要功能就是输入文本，编辑文本，很多编辑器在打开文件的时候就可以通过键盘录入文字，但是 VIM 有稍许的不同，刚刚接触 VIM 的时候是很难对 VIM 进行编辑操作的，记得我在刚接触它的时候是很崩溃的（千万个草泥马在内心奔腾），但是你接触久了，了解的多了，也就理解如此设计的美妙之处。</p>
+<h3 id="编辑文本"><a class="markdownIt-Anchor" href="#编辑文本"></a> 编辑文本？</h3>
+<p>这里有必要再强调一下，在使用 VIM 打开文件的时候，这时候的状态是正常模式（Normal-mode）,请务必记住这个模式，如果你不确定当前是否处在正常模式，请连续按两下键盘上的 jj (这个 jj 需要读者去做相应的配置，上文有做过讲解)，VIM 处理编辑文本需要从正常模式(Normal)切换到插入模式(Insert-mode),进入插入模式的时候你应该会在屏幕底部看到 INSERT 的提示，这时候就可以编辑文本了。</p>
+<p>请记住下面几个常用启动录入文本的键盘字符 i,I,a,A,o,O,s,S 。</p>
+<p>i是在光标所在的字符之前插入需要录入的文本。</p>
+<p>I 是在光标所在行的行首插入需要录入的文本。</p>
+<p>a 是在光标所在的字符之后插入需要录入的文本。</p>
+<p>A 是在光标所在行的行尾插入需要录入的文本。</p>
+<p>o 是光标所在行的下一行行首插入需要录入的文本。</p>
+<p>O 是光标所在行的上一行行首插入需要录入的文本。</p>
+<p>s 删除光标所在处的字符然后插入需要录入的文本。</p>
+<p>S 删除光标所在行，在当前行的行首开始插入需要录入的文本。</p>
+<p>还有一个可能经常用到的就是 cw ，删除从光标处开始到该单词结束的所有字符，然后插入需要录入的文本（这个命令是两个字符的合体 cw ）。</p>
+<h2 id="命令模式"><a class="markdownIt-Anchor" href="#命令模式"></a> 命令模式</h2>
+<p>关于命令模式上文有提到过，下面主要来列举几个常用的命令模式操作（命令输入完以后，需要按下 Enter 键去执行命令）：</p>
+<p>文本的行号设置最好不要设置在配置文件中（因为复制文件的时候行号的出现会很麻烦），在命令行实现就好。</p>
+<p>:set nu</p>
+<p>该命令会显示行号。</p>
+<p>:set nonu</p>
+<p>该命令会取消行号。</p>
+<p>:n</p>
+<p>定位到 n 行。</p>
+<p>VIM 进行关键字的查找。</p>
+<p>/{目标字符串}</p>
+<p>如：/zempty 会在文本中匹配 zempty 的地方高亮。</p>
+<p>查找文本中匹配的目标字符串，查到以后，输入键盘上的 n 会去寻找下一个匹配，N 会去寻找上一个匹配。</p>
+<p>VIM 处理大小写的区分</p>
+<p>:set ic</p>
+<p>编辑器将不会区分大小写，如果你进行该设置之后，进行关键字查询如 /zempty 如果文本中有 Zempty ,zEmpty,…,只要是字符相同不会区分大小写都会进行匹配。</p>
+<p>:set noic</p>
+<p>该命令用来区分大小写的查询。</p>
+<p>VIM 删除多行文本</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:n1,n2d</span><br></pre></td></tr></table></figure>
+<p>n1 和 n2 指的是起始行号和结束行号，d 是删除关键字</p>
+<p>VIM 处理文本的替换</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:&#123;作用范围&#125;s/&#123;目标&#125;/&#123;替换&#125;/&#123;替换的标志&#125;</span><br></pre></td></tr></table></figure>
+<p>作用范围分为当前行、全文、选区等等。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:s/zempty/handsome/g</span><br></pre></td></tr></table></figure>
+<p>将会把当前光标所在行的 zempty 替换成 handsome</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s/zempty/handsome/g</span><br></pre></td></tr></table></figure>
+<p>将会把全文中的 zempty 替换成 handsome</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:n1,n2s/zempty/handsome/g</span><br></pre></td></tr></table></figure>
+<p>这里的 n1 和 n2 值得是行号，将会替换掉 n1 到 n2 的所有 zempty 为 handsome.</p>
+<p>选区，在可视模式下选择区域后输入 : ，VIM 会自动补全为 :’&lt;,’&gt;。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:&#x27;&lt;,&#x27;&gt;s/zempty/handsome/g</span><br></pre></td></tr></table></figure>
+<p>这个操作咋一看起来有点懵逼，这个操作是可视模式 (Visual-mode) 下选区中的替换操作（可视模式下文会谈到），可视模式下输入：会自动补全 :’&lt;,’&gt; 这个是可视范围下的操作范围，类似于 % 和 n1,n2，代表操作的文本范围，上面的例子就是替换掉可视区域的 zempty 为 handsome。</p>
+<p>下面来谈谈替换的标志。</p>
+<p>上文中命令结尾的 g 即是替换标志之一，表示全局 global 替换（即替换目标的所有出现）。 还有很多其他有用的替换标志：</p>
+<p>空替换标志表示只替换从光标位置开始，目标的第一次出现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:s/zempty/handsome</span><br></pre></td></tr></table></figure>
+<p>作用于当前行，从光标处开始查找替换，仅仅替换第一次匹配 zempty 的地方为handsome 。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s/zempty/handsome</span><br></pre></td></tr></table></figure>
+<p>替换掉文件中所有行第一次出现 zempty 的地方为 handsome 。</p>
+<p>i 表示大小写不敏感查找，I 表示大小写敏感：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s/zempty/handsome/i</span><br></pre></td></tr></table></figure>
+<p>替换掉所有行第一个出现 zempty (不区分大小写) 为 handsome 。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:%s/zempty/handsome/gi</span><br></pre></td></tr></table></figure>
+<p>替换掉所有行出现 zempty (不区分大小写) 为 handsome 。</p>
+<p>c 表示需要确认，例如全局查找&quot;zempty&quot;替换为&quot;handsome&quot;并且需要确认：</p>
+<p>:%s/zempty/handsome/gc</p>
+<h3 id="vim-执行-linux-命令"><a class="markdownIt-Anchor" href="#vim-执行-linux-命令"></a> VIM 执行 Linux 命令</h3>
+<dl>
+<dt>:!command</dt>
+<dd>后面紧跟着 ! ，! 后面紧跟着 linux 命令（ command 指操作 Linux 系统的一系列命令，如创建文件，新建文件夹，查询文件的属性的等），例子如下，</dd>
+</dl>
+<p>:!date</p>
+<p>执行 date 命令显示时间，执行完命令以后按下键盘上的 Enter 就会返回到文件。</p>
+<p>VIM 执行命令，并且添加结果至操作文本光标处</p>
+<dl>
+<dt>:r !command</dt>
+<dd>后面紧跟着 r , r 后面是空格，紧接着是 !command( command 解释同上)，例子如下，</dd>
+</dl>
+<p>:r !date</p>
+<p>执行 date 命令显示时间，并且添加命令结果到文本中。</p>
+<p>定义快捷键</p>
+<p>下面举例说明：</p>
+<p>:map ^M I#<ESC></p>
+<dl>
+<dt>上面的例子也就是通过快捷键 Ctrl + m 在文件光标处所在行的行首插入 # （ # 代表注释）。</dt>
+<dd>后面的 map 是关键字 ，后面是 key 和 value 。</dd>
+</dl>
+<p>key 对应的是 ^M ， 这个 key 需要强调一下 ^M 是 Ctrl + v + m 打出来的（按下这三个键，VIM 会显示成 ^M ）,^M 代表快捷键是Ctrl + m , Ctrl + v + n 就是 ^N ,代表快捷键是 Ctrl + n 。Ctrl + v + x 就是 ^X (这里的 x 是代表 26 个字母中的任意一个) 代表快捷键 Ctrl + x。</p>
+<p>value 对应的是 I#<ESC>,表示按下快捷键以后执行的相应操作，I 是切换光标至行首并切换到编辑模式，#是行首输入的内容（ # 是VIM 文件中的注释符号 ），<ESC> 是退出编辑模式。</p>
+<p>举例如下：</p>
+<p>:map ^D Ahelloworld<ESC>表示在文件的光标所在行的行尾，添加 helloworld 字符串，按住组合键 ctrl + d 就会执行操作。</p>
+<p>使用 ab</p>
+<dl>
+<dt>:ab email <a href="mailto:xxxx@gmail.com">xxxx@gmail.com</a></dt>
+<dd>后面的 ab 是关键字 ,该命令执行后，然后切换到编辑模式下,输入 email 会把输入的 email 自动替换成 <a href="mailto:xxxx@gmail.com">xxxx@gmail.com</a>。</dd>
+</dl>
+<p>这个命令主要是处理频繁输入同样的长串字符串。</p>
+<h2 id="正常模式normal-model"><a class="markdownIt-Anchor" href="#正常模式normal-model"></a> 正常模式（Normal-model）</h2>
+<p>VIM 正常模式下，主要进行的操作有光标的移动，复制文本，删除文本，黏贴文本等。</p>
+<h3 id="快速移动光标"><a class="markdownIt-Anchor" href="#快速移动光标"></a> 快速移动光标</h3>
+<p>请记住这几个快捷键 h,j,k,l 这几个按键主要是用来快速移动光标的:</p>
+<p>h 是向左移动光标，</p>
+<p>l 是向右移动光标，</p>
+<p>j 是向下移动光标，</p>
+<p>k 是向上移动光标，</p>
+<p>h , j , k ,l 在主键盘区完全可以取代键盘上的 ↑ ,↓ ,← , → 的功能。</p>
+<h3 id="在当前行上移动光标"><a class="markdownIt-Anchor" href="#在当前行上移动光标"></a> 在当前行上移动光标</h3>
+<p>0 移动到行头</p>
+<p>^ 移动到本行的第一个不是 blank 字符</p>
+<p>$ 移动到行尾</p>
+<p>g_ 移动到本行最后一个不是 blank 字符的位置</p>
+<p>w 光标移动到下一个单词的开头</p>
+<p>e 光标移动到下一个单词的结尾</p>
+<p>fa 移动到本行下一个为 a 的字符处，fb 移动到下一个为 b 的字符处</p>
+<p>nfa 移动到本行光标处开始的第 n 个 字符为 a 的地方（n 是 1，2，3，4 … 数字）</p>
+<p>Fa 同 fa 一样，光标移动方向同 fa 相反</p>
+<p>nFa 同 nfa 类似，光标移动方向同 nfa相反</p>
+<p>ta 移动光标至 a 字符的前一个字符</p>
+<p>nta 移动到第二个 a 字符的前一个字符处</p>
+<p>Ta 同 ta 移动光标方向相反</p>
+<p>nTa 同 nta 移动光标方向相反</p>
+<p>; 和, 当使用 f, F, t ,T, 关键字指定字符跳转的时候，使用 ；可以快速跳转到下一个指定的字符，, 是跳到前一个指定的字符</p>
+<h3 id="跨行移动光标"><a class="markdownIt-Anchor" href="#跨行移动光标"></a> 跨行移动光标</h3>
+<p>nG 光标定位到第 n 行的行首</p>
+<p>gg 光标定位到第一行的行首</p>
+<p>G 光标定位到最后一行的行首</p>
+<p>H 光标定位到当前屏幕的第一行行首</p>
+<p>M 光标移动到当前屏幕的中间</p>
+<p>L 光标移动到当前屏幕的尾部</p>
+<p>zt 把当前行移动到当前屏幕的最上方，也就是第一行</p>
+<p>zz 把当前行移动到当前屏幕的中间</p>
+<p>zb 把当前行移动到当前屏幕的尾部</p>
+<p>% 匹配括号移动，包括 ( , { , [ 需要把光标先移动到括号上</p>
+<p><code>*</code> 和 <code>#</code> 匹配光标当前所在的单词，移动光标到下一个（或者上一个）匹配的单词（ * 是下一个，# 是上一个）</p>
+<h3 id="翻页操作"><a class="markdownIt-Anchor" href="#翻页操作"></a> 翻页操作</h3>
+<p>ctrl+f 查看下一页内容</p>
+<p>ctrl+b 查看上一页内容</p>
+<h3 id="vim-的复制黏贴-删除"><a class="markdownIt-Anchor" href="#vim-的复制黏贴-删除"></a> VIM 的复制，黏贴 ，删除</h3>
+<p>三个重要的快捷键 d , y , p</p>
+<p>d 是删除的意思，通常搭配一个字符 ( 删除范围 ) 实现删除功能，常用的如下：</p>
+<p>dw 删除一个单词</p>
+<p>dnw 删除 n 个单词，</p>
+<p>dfa 删除光标处到下一个 a 的字符处（ fa 定位光标到 a 处 ）</p>
+<p>dnfa 删除光标处到第 n 个 a 的字符处</p>
+<p>dd 删除一整行</p>
+<p>ndd 删除光标处开始的 n 行</p>
+<p>d$ 删除光标到本行的结尾</p>
+<p>dH 删除屏幕显示的第一行文本到光标所在的行</p>
+<p>dG 删除光标所在行到文本的结束</p>
+<p>y 是复制的意思，通常搭配一个字符（复制范围）实现复制的功能，常用的如下：</p>
+<p>yw 复制一个单词，还有 ynw</p>
+<p>yfa 复制光标到下一个 a 的字符处,还有ynfa</p>
+<p>yy 复制一行，还有 nyy</p>
+<p>y$ 复制光标到本号的结尾</p>
+<p>yH 复制屏幕显示的第一行文本到光标所在的行</p>
+<p>yG 复制光标所在行到文本的结束</p>
+<p>p ，P是黏贴的意思，当执行完复制或者黏贴的命令以后，VIM 会把文本寄存起来。</p>
+<p>p 在光标后开始黏贴</p>
+<p>P 大写的 P 光标前开始粘贴</p>
+<h4 id="撤销操作和恢复"><a class="markdownIt-Anchor" href="#撤销操作和恢复"></a> 撤销操作和恢复</h4>
+<p>u 撤销刚才的操作</p>
+<p>ctrl + r 恢复撤销操作</p>
+<h4 id="删除字符操作和替换"><a class="markdownIt-Anchor" href="#删除字符操作和替换"></a> 删除字符操作和替换</h4>
+<p>x 删除光标当前所在的字符</p>
+<p>r 替换掉光标当前所在的字符</p>
+<p>R 替换掉从光标开始以后的所有字符，除非 <ESC > 退出，或者 jj （代替 <ESC> 上文有提到）退出。</p>
+<h4 id="大小写转换"><a class="markdownIt-Anchor" href="#大小写转换"></a> 大小写转换</h4>
+<p>~ 将光标下的字母改变大小写<br />
+3~ 将光标位置开始的3个字母改变其大小写<br />
+g~~ 改变当前行字母的大小写<br />
+gUU 将当前行的字母改成大写<br />
+guu 将当前行的字母全改成小写</p>
+<p>3gUU 将从光标开始到下面3行字母改成大写<br />
+gUw 将光标下的单词改成大写。<br />
+guw 将光标下的单词改成小写</p>
+<h4 id="vim-的重复命令"><a class="markdownIt-Anchor" href="#vim-的重复命令"></a> VIM 的重复命令</h4>
+<p>. 该命令是重复上一个操作的命令<br />
+n<command>重复某个命令 n 次，<br />
+如 10p复制 10 次，10dd 删除十次。</p>
+<h3 id="可视化模式visual-mode"><a class="markdownIt-Anchor" href="#可视化模式visual-mode"></a> 可视化模式（Visual-mode)</h3>
+<h4 id="vvctrlv"><a class="markdownIt-Anchor" href="#vvctrlv"></a> v,V,Ctrl+v</h4>
+<p>v字符可视化，按下键盘上的v以后，屏幕底部应该会有一个 VISUAl 的提示，操作 h,j,k,l就选中文本，继续按 v 退出可视化模式。</p>
+<p>V 行可视化，按下键盘上的 V 以后，屏幕底部应该有一个 VISUAL LINE 的提示，操作 j,k 可以向上或者向下以行为单位选中文本，继续按下 V 退出可视化模式。</p>
+<p>Ctrl+v 块状可视化，按下键盘上的 Ctrl+v 以后，屏幕底部应该会有一个提示 VISUALBLOCK ，可以通过 h,j,k,l 块状的操作选择区域，这是很多编辑器都不可以做到的，继续按下 Ctrl+v 会退出可视化模式。</p>
+<h4 id="可视化模式下操作文本"><a class="markdownIt-Anchor" href="#可视化模式下操作文本"></a> 可视化模式下操作文本</h4>
+<p>可视化模式下选择操作区域以后，<br />
+按下 d会删除选择的区域，<br />
+按下 y 会复制选择的区域，按下 p 会黏贴选择的区域。</p>
+<h4 id="可视化模式下-v-的特殊操作"><a class="markdownIt-Anchor" href="#可视化模式下-v-的特殊操作"></a> 可视化模式下 v 的特殊操作</h4>
+<p>当操作的文本光标在 “”，‘’ ，（），{} ，[（双引号，单引号，小括号，大括号，中括号）<br />
+当中的时候,可以通过 va&quot;选中 ”“ 内的所有内容包括双引号 ，vi&quot; 选中 “” 内的所有内容，不包括 “”。va,vi 会快速选择区域，va 后面会紧跟一个区域结束标志，a 会选中结束符标志，i 就不会。例子如下：</p>
+<p>“hello world [VIM is so strong],{we all can master vim skill}”</p>
+<p>假设当前光标定位在上面的文本 M 处：<br />
+va] 操作将会选中以下文本（加粗部分）：<br />
+“hello world[VIM is so strong],{we all can master vim skill}“<br />
+vi] 操作将会选中如下的区域，没有包含 []：<br />
+“hello world [VIM is so strong],{we all can master vim skill}“</p>
+<h4 id="块区域下的特殊操作"><a class="markdownIt-Anchor" href="#块区域下的特殊操作"></a> 块区域下的特殊操作</h4>
+<p>Ctrl+v 选中块区域以后，按下大写的 I 或者 A 可以在区域的前面或者后面输入内容，按下 jj 或者 <ESC>,可以看到选中的区域前面或者后面会有输入的内容。</p>
+<h4 id="vim-的代码提示功能"><a class="markdownIt-Anchor" href="#vim-的代码提示功能"></a> VIM 的代码提示功能</h4>
+<p>在编辑模式下 ，快捷键 Ctrl+n 或者 Ctrl+p 会有代码提示功能，我们可以实现快速录入的效果。</p>
+<h4 id="vim-的宏录制"><a class="markdownIt-Anchor" href="#vim-的宏录制"></a> VIM 的宏录制</h4>
+<p>假设需要操作的文本如下,需要将如下文本的每一行的行首插入入一个 tab 键。</p>
+<p>hello<br />
+hello world<br />
+hello world , vim<br />
+宏录制的录制操作</p>
+<p>先将光标移动到第一行，在普通模式下按下 q 键（宏录制是 q 键启动的),在按一个 a （字母随意）,表示该宏注册为 a ，按下 I 在行首插入一个 tab 键，按下jj或者 <ESC>退出编辑模式,按下 j 将光标移动到下一行行首，最后按下 q 键完成录制操作（宏录制是 q 键结束的）。<br />
+总结上面例子的操作流程：<br />
+q → a → I → tab → jj → j → q<br />
+上面的例子成功地把在行首插入 tab 的功能录制了下来，那么如何应用到其他行呢？</p>
+<h4 id="宏录制的使用"><a class="markdownIt-Anchor" href="#宏录制的使用"></a> 宏录制的使用</h4>
+<p>上述的例子，在正常模式下，按 @a执行宏录制的一系列动作，将会在第二行执行插入 tab 。<br />
+@@ 是对上一次宏使用的重复操作。n@a 就会执行 n 次一系列的动作。使用宏录制可以一次执行一系列的操作，可以针对一些重复度较高的操作进行宏录制。</p>
+<p><img src="./assets/vi-keyboard.gif" alt="vi-keyboard" /></p>
+<h2 id="neovim"><a class="markdownIt-Anchor" href="#neovim"></a> NeoVim</h2>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/577413629">https://zhuanlan.zhihu.com/p/577413629</a></p>
+<h2 id="idea-vim"><a class="markdownIt-Anchor" href="#idea-vim"></a> <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/148782512">IDEA VIM</a></h2>
+<h2 id="1-切换vim模拟器状态"><a class="markdownIt-Anchor" href="#1-切换vim模拟器状态"></a> <strong>1. 切换Vim模拟器状态</strong></h2>
+<p>这个插件允许设置一个快捷键一键开启或关闭，在切换模式时会同时自动切换keymap，十分方便。默认键位是Ctrl+Alt+V，但这个键位覆盖了很常用的“抽取局部变量”功能，建议重设，在setting-&gt;keymap中查找VIM Emulator即可。</p>
+<p>由于开启和关闭状态分别使用两套keymap，因此两套都需要设定。可以把两套keymap下的都设为一样的键，也就是用同一个键切换。但个人建议设为不同的键，这样能清楚知道当前处于那种模式中。并且，如果在开启Vim的插入模式下关闭Vim模拟器，下次进入时仍然是插入模式，比较混乱（因为你关闭模拟器就是为了使用默认keymap输入大段代码，重新开启Vim模拟器就是为了使用普通模式下的命令）。</p>
+<p>因此建议把Vim keymap中的Exit Insert Mode设为与另一个keymap的Vim Emulator相同的键（也就是进入Vim模拟器的快捷键）。</p>
+<p>例如，我使用的设定是：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Default keymap -&gt; Vim Emulator : Ctrl+;     (用Ctrl+分号开启Vim模拟器）</span><br><span class="line">Vim keymap -&gt; Vim Emulator : Ctrl+,    (用Ctrl+逗号关闭Vim模拟器）</span><br><span class="line">Vim keymap -&gt; Vim Emulator : Ctrl+;    (用Ctrl+分号退出插入模式，进入普通模式）</span><br></pre></td></tr></table></figure>
+<p>这样，在任何时候只要连按两下ctrl+分号，就能保证必定在Vim模拟器的普通模式中。</p>
+<h2 id="2-scrolloff-参数"><a class="markdownIt-Anchor" href="#2-scrolloff-参数"></a> <strong>2. ScrollOff 参数</strong></h2>
+<p>启动Intellij后在Vim模拟器下输入命令 :</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set so=5</span><br></pre></td></tr></table></figure>
+<p>可以令屏幕滚动时在光标上下方保留5行预览代码（也就是光标会在第5行触发向上滚动，或者在倒数第5行触发向下滚动）。</p>
+<p>在代码窗口比较狭小时（例如单步跟踪调试时）非常方便。可惜仅在Vim模拟器开启时有效。</p>
+<h2 id="3-行号定位"><a class="markdownIt-Anchor" href="#3-行号定位"></a> <strong>3. 行号定位</strong></h2>
+<p>普通模式下输入 行号G 或 :行号&lt;回车&gt; 都能快速定位到某一行。</p>
+<p>区别在于前者在输入行号时屏幕上没有任何提示，后者则在Vim命令输入框中可以看到输入过程。</p>
+<p>（题外话：Sublime Text 2也是用 :行号 来快速定位到某行，应该是沿用了Vim的习惯）</p>
+<h2 id="4-进入修改"><a class="markdownIt-Anchor" href="#4-进入修改"></a> <strong>4. 进入修改</strong></h2>
+<p>进入插入模式的方式有很多，直接选用合适的方式进入插入模式比进入后再用箭头键移动光标要好。常用的有：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">o - 在当前行下方插入新行并自动缩进</span><br><span class="line">O - 在当前行上方插入新行并自动缩进 （普通模式下的大写字母命令用 shift+字母键 输入，下同）</span><br><span class="line">i - 在当前字符左方开始插入字符</span><br><span class="line">a - 在当前字符右方开始插入字符</span><br><span class="line">I - 光标移动到行首并进入插入模式</span><br><span class="line">A - 光标移动到行尾并进入插入模式</span><br><span class="line">s - 删除光标所在字符并进入插入模式</span><br><span class="line">S - 删除光标所在行并进入插入模式</span><br><span class="line">c&lt;范围&gt; - 删除光标所在位置周围某个范围的文本并进入插入模式。关于范围请看第5点，常用的组合有：caw - 删除一个单词包括它后面的空格并开始插入；ciw - 删除一个单词并开始插入；ci&quot; - 删除一个字符串内部文本并开始插入；c$ - 从光标位置删除到行尾并开始插入；ct字符 - 从光标位置删除本行某个字符之前（保留该字符）并开始插入。等等。</span><br><span class="line">C - 删除光标位置到行尾的内容并进入插入模式 (相当于c$)</span><br><span class="line">r - 修改光标所在字符，然后返回普通模式</span><br><span class="line">R - 进入覆盖模式</span><br></pre></td></tr></table></figure>
+<h2 id="5-范围操作"><a class="markdownIt-Anchor" href="#5-范围操作"></a> <strong>5. 范围操作</strong></h2>
+<p>某些普通模式的动作命令后面可以追加一些表示范围的指令，表示该动作将作用在整个范围上。这类命令常用的有：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">d&lt;范围&gt; - 删除一定范围内的文本</span><br><span class="line">c&lt;范围&gt; - 删除一定范围内的文本并进入插入模式</span><br><span class="line">y&lt;范围&gt; - 将范围内的文本放入0号和&quot;号注册栏</span><br><span class="line">v&lt;范围&gt; - 选择范围内的文本</span><br><span class="line">=&lt;范围&gt; - 自动缩进范围内的文本</span><br><span class="line">gU&lt;范围&gt; - 将范围内的字符转换为大写</span><br><span class="line">gu&lt;范围&gt; - 将范围内的字符转换为小写</span><br><span class="line">&gt;&lt;范围&gt; - 将范围中的内容缩进一格</span><br><span class="line">&lt;&lt;范围&gt; - 将范围中的内容取消缩进一格</span><br></pre></td></tr></table></figure>
+<p>常用的范围指令有：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">空格 - 光标所在位置字符。（例如 gU空格 - 将光标位置字符转为大写）</span><br><span class="line">重复某些动作命令 - 光标所在行。 （例如dd删除一行，yy复制一行，cc删除一行文本并开始插入，&gt;&gt; 当前行缩进一格，==自动缩进当前行）</span><br><span class="line">$ - 从光标位置到行尾</span><br><span class="line">^ - 从光标位置到行首，不包含缩进空白</span><br><span class="line">0 - 从光标位置到行首，包含缩进空白</span><br><span class="line">gg - 从光标位置到文件开头</span><br><span class="line">G - 从光标位置到文件结尾</span><br><span class="line">% - 从光标位置到另一边匹配的括号</span><br><span class="line">f&lt;字符&gt; - 从光标位置到光标右边某个字符首次出现的位置，包括该字符</span><br><span class="line">F&lt;字符&gt; - 从光标位置到光标左边某个字符首次出现的位置，包括该字符</span><br><span class="line">t&lt;字符&gt; - 从光标位置到光标右边某个字符首次出现的位置，包括该字符</span><br><span class="line">F&lt;字符&gt; - 从光标位置到光标左边某个字符首次出现的位置，包括该字符</span><br><span class="line">/正则表达式 - 从光标位置到下一个匹配正则表达式的位置（跨行）</span><br><span class="line">?正则表达式 - 从光标位置到上一个匹配正则表达式的位置（跨行）</span><br><span class="line">aw - 一个单词加一个空格 （a可理解为“一个”，下同）</span><br><span class="line">iw - 一个单词 （i可理解为in，下同）</span><br><span class="line">a&quot; - 一个字符串包括双引号</span><br><span class="line">i&quot; - 一个字符串内部文本</span><br><span class="line">a&lt; - 一组&lt; &gt;包含的文本，包括&lt; &gt;号本身</span><br><span class="line">同理类推：i&lt;, a[, i[, a(, i(</span><br></pre></td></tr></table></figure>
+<ul>
+<li>注意：真正vim中的it范围（一对xml标签内部）在ideaVim中不生效。</li>
+</ul>
+<p>用/或?命令查找时，正则表达式默认大小写敏感，如果需要不敏感，可以在正则表达式开始处加上\c标志。</p>
+<p>例如 /\cabc 可以匹配到 ABC。下面提到的:s命令同样适用。</p>
+<h2 id="6-选择文本"><a class="markdownIt-Anchor" href="#6-选择文本"></a> <strong>6. 选择文本</strong></h2>
+<p>在Vim中，选择文本需要进入“可视模式”（Visual Mode），这个名称比较奇怪，它的来由据说是因为在Vim的前身Vi中，选择区域是不可见的。</p>
+<p>在Vim中选择区域会高亮显示，因此称为“可视模式”。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v - 进入字符选择模式， V - 进入行选择模式， Ctrl+v - 进入块选择模式。</span><br></pre></td></tr></table></figure>
+<p>进入相应模式后移动光标即可选中文本。过程中可按o键令光标在选区两端切换。</p>
+<p>在块选择模式中选中多行，然后按I或A后输入文本，再退出插入模式，所输入的文本将自动加入到每一行的开头或结尾。</p>
+<h2 id="7-复制粘贴"><a class="markdownIt-Anchor" href="#7-复制粘贴"></a> <strong>7. 复制粘贴</strong></h2>
+<p>在Vim模式下，复制粘贴并不直接使用系统的剪贴板，而是使用Vim提供的多个“寄存器”，每个寄存器都以一个字符来表示。</p>
+<p>关于寄存器的详细说明可以看这里 <a target="_blank" rel="noopener" href="http://blah.blogsome.com/2006/04/27/vim_tut_register/">http://blah.blogsome.com/2006/04/27/vim_tut_register/</a> （随便google的一个网页），这里简单列一些常用的操作技巧</p>
+<p>（注意，vim使用双引号”来作为选择寄存器的命令，因此下文中的双引号均指在普通模式下按双引号键）：</p>
+<p>a）用y命令将文本存入寄存器后，如果想在别处替换原有内容，可以先用v命令选中原有内容，然后用p命令粘贴。</p>
+<p>但第一次粘贴后，默认的寄存器”将被替换为刚刚删除的内容。如果要再次粘贴之前复制的内容，需要使用 “0p 命令组合来复制。</p>
+<p>也可以进入插入模式后用 Ctrl+r 0 来复制，例如 ciw&lt;Ctrl+r&gt;0 命令组合将用粘贴内容替换光标处的一个单词，并停留在插入模式。</p>
+<p>b）在Windows下，寄存器 + 和 * 都代表系统剪贴板，可以互换使用，选一个顺手的即可。</p>
+<p>例如 “+yy 命令组合可将当前行复制到系统剪贴板。ci”&lt;Ctrl+r&gt;* 命令组合则将系统剪贴板的内容替换字符串的内部文本。</p>
+<p>c) 寄存器1至9记录之前九次的删除大段文本，每次超过一行的删除操作都会导致这9个寄存器的内容发生位移，最近删除的文本会存入寄存器1。</p>
+<p>但只有删除超过1行时才会影响寄存器1至9，行内的删除内容则会被存入寄存器-（减号）。</p>
+<p>如果用q命令录制宏时不涉及跨行删除，可以在宏中直接使用这9个寄存器来暂存文本。</p>
+<p>（在Vim中，复制内容与录制宏共享同一套寄存器，因此我习惯把字母寄存器留给宏使用）</p>
+<p>d) 普通模式下小写p把寄存器内容复制到当前位置之后，大写P把寄存器内容复制到当前位置之前。</p>
+<p>e) 使用 :regs 命令可以列出当前所有寄存器的内容</p>
+<h2 id="8一些插入模式下的常用快捷键"><a class="markdownIt-Anchor" href="#8一些插入模式下的常用快捷键"></a> <strong>8.一些插入模式下的常用快捷键</strong></h2>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+h - 删除光标左边字符</span><br><span class="line">Ctrl+w - 删除光标左边的单词</span><br><span class="line">Ctrl+y - 复制上方的一个字符</span><br><span class="line">Ctrl+e - 复制下方的一个字符</span><br><span class="line">Ctrl+r 0 - 插入前一次用y命令寄存的内容</span><br><span class="line">Ctrl+r * - 插入系统剪贴板的内容</span><br><span class="line">Ctrl+r &lt;寄存器名称&gt; - 插入指定寄存器的内容</span><br><span class="line">Ctrl+a - 插入前一次插入模式所键入的内容</span><br><span class="line">Ctrl+o - 执行一个普通模式下的命令然后返回插入模式。 例如 Ctrl+o A 相当于按 End键， Ctrl+o I相当于按Home键</span><br></pre></td></tr></table></figure>
+<h2 id="9-退出插入模式"><a class="markdownIt-Anchor" href="#9-退出插入模式"></a> <strong>9. 退出插入模式</strong></h2>
+<p>退出插入模式可以用 ESC 键，但键位太远。其实也可以用 Ctrl+[ 键退出插入模式 。</p>
+<p>当然也可以用第1点自定义的Ctrl+;快捷键，但这不是标准vim按键，会养成不良习惯，不建议使用。</p>
+<h2 id="10-重复操作"><a class="markdownIt-Anchor" href="#10-重复操作"></a> <strong>10. 重复操作</strong></h2>
+<p>普通模式下按. （小数点）可重复上一次的修改操作</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&amp; - 重复上一次的:s替换命令</span><br><span class="line">@@ - 重复上一次执行的宏</span><br></pre></td></tr></table></figure>
+<h2 id="11-跳转"><a class="markdownIt-Anchor" href="#11-跳转"></a> <strong>11. 跳转</strong></h2>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+] 跳转到当前标识符的定义位置 （相当于在当前光标位置的单词上按住ctrl用鼠标点击）</span><br><span class="line">Ctrl+o 回退一步 (go back)</span><br><span class="line">Ctrl+i 前进一步 (go forward)</span><br><span class="line">`. 跳转到之前修改位置</span><br><span class="line">`` 在前一次跳转位置与当前位置间切换</span><br><span class="line">行号G 或 :行号&lt;回车&gt;  跳转到某一行</span><br><span class="line">gg 跳转到文件开头</span><br><span class="line">G  跳转到文件末尾</span><br><span class="line">H  跳转到屏幕顶端（如果设置了set so=n，则跳转到第n行）</span><br><span class="line">L  跳转到屏幕底端（如果设置了set so=n，则跳转到倒数第n行）</span><br><span class="line">M  跳转到屏幕中间</span><br><span class="line">f 或 F 跳转到本行某个字符，小写f向右查找，大写F向左查找。用;或,在匹配间切换</span><br><span class="line">t 或 T 跳转到本行某个字符之前，小写t向右查找，大写T向左查找。用;或,在匹配间切换</span><br><span class="line">/正则表达式  跳转到下一个匹配。用n或N在匹配间切换。</span><br><span class="line">?正则表达式  跳转到上一个匹配。用n或N在匹配间切换。</span><br></pre></td></tr></table></figure>
+<p>（结合前面第5点，你也许注意到了，在指定范围时，使用跳转命令将指定一个从光标位置到跳转目标的区域）</p>
+<h2 id="12-书签"><a class="markdownIt-Anchor" href="#12-书签"></a> <strong>12 书签</strong></h2>
+<p>在普通模式下按 m&lt;小写字母&gt; 即可定义书签，按 `&lt;字母&gt; 则可跳转到某个书签的精确位置，按 ‘&lt;字母&gt;可跳转到某个书签所在行的行首（用来录制宏时比较有用）。</p>
+<p>最常用的自然是mm, mn, mj, mk, ml这几个顺手的键位。</p>
+<p>真正的vim中的全局书签 m&lt;大写字母&gt; 在目前IdeaVim版本中不生效。需要定义全局书签可以使用Idea原本的 F11 + 数字 方式</p>
+<h2 id="13-文本替换"><a class="markdownIt-Anchor" href="#13-文本替换"></a> <strong>13 文本替换</strong></h2>
+<p>使用 😒/正则表达式/替换文本/ 可在本行内替换首次出现的匹配</p>
+<p>使用 😒/正则表达式/替换文本/g 在本行内替换所有出现的匹配</p>
+<p>使用 :%s/正则表达式/替换文本/g 在当前文件内替换所有出现的匹配</p>
+<p>在可视模式下选中文本后，使用:’&lt;,’&gt;s/正则表达式/替换文本/g 命令可在选中区域中替换文本。</p>
+<p>其中’&lt;,’&gt;部分在可视模式下，按:冒号后自动加入，直接输入s命令即可。但有效区域只能以行为单位。</p>
+<p>真正Vim中的 %V 标志在IdeaVim中不生效。</p>
+<h2 id="11-代码折叠"><a class="markdownIt-Anchor" href="#11-代码折叠"></a> <strong>11 代码折叠</strong></h2>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">zo - 打开折叠</span><br><span class="line">zc - 关闭折叠</span><br></pre></td></tr></table></figure>
+<h2 id="14-宏定义"><a class="markdownIt-Anchor" href="#14-宏定义"></a> <strong>14 宏定义</strong></h2>
+<p>在IdeaVim中定义宏比Idea自带的宏功能要轻量许多。</p>
+<p>按在普通模式下 q&lt;寄存器名称&gt; 即可开始把后续按键序列录制到指定寄存器中（寄存器参考前面第7条）。录制完毕进入普通模式再按q键即可停止录制。</p>
+<p>之后用 @&lt;寄存器名称&gt; 即可重放。需要注意的是宏和复制粘贴共用一套寄存器，因此在录制宏时就注意不要把当前宏正在使用的寄存器用来复制了。</p>
+<p>寄存器内容是自动保存的，重启Idea仍然生效。但IdeaVim没有导出宏独立保存的功能。因此最好把用来保存宏的寄存器和用来复制粘贴的寄存器分开，不要同一个寄存器有时用来记录宏，有时用来复制粘贴。我的习惯是键盘左手区用来保存一些长期使用的宏（比如说我有一个宏专门用来把pom.xml中的版本号抽取到property区域，原来的位置则改用${property}引用）。</p>
+<p>右手区的hjklnm键用来保存一些临时宏。yuiop五个寄存器保留用来复制粘贴。如果录制的宏不涉及删除大段代码，寄存器1至9也可以用来进行复制粘贴。</p>
+<p>执行一次宏后，可以用@@命令重复上一次执行的宏。</p>
+<p>在Idea中录制宏时，如果触发了代码自动完成，在自动完成列表启动的状态输入的字符不会被记录。因此最好在Setting -&gt; Code Completion -&gt; Autopopup code completion中把延迟设为500ms以上或干脆关掉。在录制宏的过程中避免触发代码自动完成功能。</p>
+<p>录制一些长期有效的宏时，开始录制后，最好先用0，^，T, F, $等命令把光标对齐到行首行末或某个特定起始位置（比如说用 F” 跳转到字符串的左边引号），再用一个f或/指令跳转到操作位置，这样的宏就不用必须把光标放在某个特定字符才能使用了。</p>
+<h2 id="15-一些常用组合技"><a class="markdownIt-Anchor" href="#15-一些常用组合技"></a> <strong>15. 一些常用组合技</strong></h2>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">全选：ggvG</span><br><span class="line">调换两个字符位置：xp</span><br><span class="line">复制一行：yyp</span><br><span class="line">调换两行位置：ddp</span><br><span class="line">插入模式下到行尾继续输入（相当于End键）：Ctrl+o A 或 Ctrl+[ A</span><br><span class="line">插入模式下到行首继续输入（相当于Home键）：Ctrl+o I 或 Ctrl+[ I</span><br><span class="line">到类定义位置（适用于正确缩进的public，protected类） ：?^p回车</span><br></pre></td></tr></table></figure>
+<h2 id="16-一些在目前版本已知没有实现的一些常用vim功能"><a class="markdownIt-Anchor" href="#16-一些在目前版本已知没有实现的一些常用vim功能"></a> <strong>16. 一些在目前版本已知没有实现的一些常用Vim功能</strong></h2>
+<p>（如果对Vim不熟悉可以跳过这节）</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a）let命令 （没有let命令就无法导出/导入寄存器内容，也就是无法导入宏）</span><br><span class="line">b）:g命令 （在文本处理中很有用的一个命令，在编程中倒是不那么常用）</span><br><span class="line">c）!命令 （执行shell命令）</span><br><span class="line">d）大部分正则表达式标记 （例如 \%V， \v 等等）</span><br><span class="line">e) 某些多键命令双击最后一个字符表示作用于当前行。例如在Vim中gUU可以把当前行转换为大写，在IdeaVim中无效，实现同样功能可以先用V命令选中当前行，再用gU转换为大写。</span><br><span class="line">f）关于窗口操作的大部分命令 （Ctrl+w系列命令, :split等）</span><br><span class="line">g）所有Vim脚本插件 （不过大部分可以用Idea自身的功能和插件来补偿）</span><br></pre></td></tr></table></figure>
+<p>嗯，差点忘了，在普通模式下按u撤销上一个修改（相当于其他IDE的Ctrl+z），按Ctrl+r重做被撤销的修改。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://jiangjinmou.github.io">jiangjinmou</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://jiangjinmou.github.io/2024/05/16/vim/">https://jiangjinmou.github.io/2024/05/16/vim/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://jiangjinmou.github.io" target="_blank">BLOG</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/tool/">tool</a></div><div class="post_share"><div class="social-share" data-image="/medias/featureimages/23.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/medias/reward/wechat.jpg" target="_blank"><img class="post-qr-code-img" src="/medias/reward/wechat.jpg" alt="wechat"/></a><div class="post-qr-code-desc">wechat</div></li><li class="reward-item"><a href="/medias/reward/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/medias/reward/alipay.jpg" alt="alipay"/></a><div class="post-qr-code-desc">alipay</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/05/15/DOS%E6%94%BB%E5%87%BB%E4%B9%8BFork-bomb/" title="DOS攻击之Fork bomb"><img class="cover" src="/medias/featureimages/9.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">DOS攻击之Fork bomb</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/05/03/Ubuntu%E7%BD%91%E7%BB%9C%E5%9B%BE%E6%A0%87%E6%B6%88%E5%A4%B1/" title="Ubuntu网络恢复"><img class="cover" src="/medias/featureimages/9.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-03</div><div class="title">Ubuntu网络恢复</div></div></a></div><div><a href="/2024/05/03/%E4%B8%80%E4%BA%9B%E5%AF%B9%E7%A8%8B%E5%BA%8F%E5%91%98%E6%9C%89%E7%94%A8%E7%9A%84%E7%BD%91%E7%AB%99/" title="一些有意思的网站"><img class="cover" src="/medias/featureimages/3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-03</div><div class="title">一些有意思的网站</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/HH.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">jiangjinmou</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/jiangjinmou"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://wpa.qq.com/msgrd?v=3&amp;uin=" target="_blank" title="QQ"><i class="fa-brands fa-qq" style="color: #1296db;"></i></a><a class="social-icon" href="https://wpa.qq.com/msgrd?v=3&amp;uin=" target="_blank" title="WeChat"><i class="fa-brands fa-weixin" style="color: #07c160;"></i></a><a class="social-icon" href="mailto:jiangjinmou@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a><a class="social-icon" href="https://discord.gg/" target="_blank" title="Discord"><i class="fa-brands fa-discord" style="color: #7289da;"></i></a><a class="social-icon" href="https://t.me/" target="_blank" title="Telegram"><i class="fa-brands fa-telegram" style="color: #0088cc;"></i></a><a class="social-icon" href="https://twitter.com/" target="_blank" title="Twitter"><i class="fa-brands fa-twitter" style="color: #1da1f;"></i></a><a class="social-icon" href="https://www.facebook.com/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook" style="color: #1877f2;"></i></a><a class="social-icon" href="https://www.instagram.com/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram" style="color: #e4405f;"></i></a><a class="social-icon" href="https://space.bilibili.com/" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili" style="color: #00a1d6;"></i></a><a class="social-icon" href="https://www.youtube.com/" target="_blank" title="Youtube"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">MISSING YOU</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#vim"><span class="toc-number">1.</span> <span class="toc-text"> vim</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text"> 输入模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E8%BE%91%E6%96%87%E6%9C%AC"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 编辑文本？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text"> 命令模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vim-%E6%89%A7%E8%A1%8C-linux-%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.1.</span> <span class="toc-text"> VIM 执行 Linux 命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%B8%B8%E6%A8%A1%E5%BC%8Fnormal-model"><span class="toc-number">1.3.</span> <span class="toc-text"> 正常模式（Normal-model）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E7%A7%BB%E5%8A%A8%E5%85%89%E6%A0%87"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 快速移动光标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E5%BD%93%E5%89%8D%E8%A1%8C%E4%B8%8A%E7%A7%BB%E5%8A%A8%E5%85%89%E6%A0%87"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 在当前行上移动光标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%A8%E8%A1%8C%E7%A7%BB%E5%8A%A8%E5%85%89%E6%A0%87"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 跨行移动光标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BF%BB%E9%A1%B5%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.4.</span> <span class="toc-text"> 翻页操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim-%E7%9A%84%E5%A4%8D%E5%88%B6%E9%BB%8F%E8%B4%B4-%E5%88%A0%E9%99%A4"><span class="toc-number">1.3.5.</span> <span class="toc-text"> VIM 的复制，黏贴 ，删除</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E6%93%8D%E4%BD%9C%E5%92%8C%E6%81%A2%E5%A4%8D"><span class="toc-number">1.3.5.1.</span> <span class="toc-text"> 撤销操作和恢复</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%AD%97%E7%AC%A6%E6%93%8D%E4%BD%9C%E5%92%8C%E6%9B%BF%E6%8D%A2"><span class="toc-number">1.3.5.2.</span> <span class="toc-text"> 删除字符操作和替换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%A7%E5%B0%8F%E5%86%99%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.3.5.3.</span> <span class="toc-text"> 大小写转换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vim-%E7%9A%84%E9%87%8D%E5%A4%8D%E5%91%BD%E4%BB%A4"><span class="toc-number">1.3.5.4.</span> <span class="toc-text"> VIM 的重复命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96%E6%A8%A1%E5%BC%8Fvisual-mode"><span class="toc-number">1.3.6.</span> <span class="toc-text"> 可视化模式（Visual-mode)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#vvctrlv"><span class="toc-number">1.3.6.1.</span> <span class="toc-text"> v,V,Ctrl+v</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96%E6%A8%A1%E5%BC%8F%E4%B8%8B%E6%93%8D%E4%BD%9C%E6%96%87%E6%9C%AC"><span class="toc-number">1.3.6.2.</span> <span class="toc-text"> 可视化模式下操作文本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96%E6%A8%A1%E5%BC%8F%E4%B8%8B-v-%E7%9A%84%E7%89%B9%E6%AE%8A%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.6.3.</span> <span class="toc-text"> 可视化模式下 v 的特殊操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%97%E5%8C%BA%E5%9F%9F%E4%B8%8B%E7%9A%84%E7%89%B9%E6%AE%8A%E6%93%8D%E4%BD%9C"><span class="toc-number">1.3.6.4.</span> <span class="toc-text"> 块区域下的特殊操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vim-%E7%9A%84%E4%BB%A3%E7%A0%81%E6%8F%90%E7%A4%BA%E5%8A%9F%E8%83%BD"><span class="toc-number">1.3.6.5.</span> <span class="toc-text"> VIM 的代码提示功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vim-%E7%9A%84%E5%AE%8F%E5%BD%95%E5%88%B6"><span class="toc-number">1.3.6.6.</span> <span class="toc-text"> VIM 的宏录制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8F%E5%BD%95%E5%88%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.6.7.</span> <span class="toc-text"> 宏录制的使用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#neovim"><span class="toc-number">1.4.</span> <span class="toc-text"> NeoVim</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#idea-vim"><span class="toc-number">1.5.</span> <span class="toc-text"> IDEA VIM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%88%87%E6%8D%A2vim%E6%A8%A1%E6%8B%9F%E5%99%A8%E7%8A%B6%E6%80%81"><span class="toc-number">1.6.</span> <span class="toc-text"> 1. 切换Vim模拟器状态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-scrolloff-%E5%8F%82%E6%95%B0"><span class="toc-number">1.7.</span> <span class="toc-text"> 2. ScrollOff 参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E8%A1%8C%E5%8F%B7%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.8.</span> <span class="toc-text"> 3. 行号定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%BF%9B%E5%85%A5%E4%BF%AE%E6%94%B9"><span class="toc-number">1.9.</span> <span class="toc-text"> 4. 进入修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%8C%83%E5%9B%B4%E6%93%8D%E4%BD%9C"><span class="toc-number">1.10.</span> <span class="toc-text"> 5. 范围操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E9%80%89%E6%8B%A9%E6%96%87%E6%9C%AC"><span class="toc-number">1.11.</span> <span class="toc-text"> 6. 选择文本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4"><span class="toc-number">1.12.</span> <span class="toc-text"> 7. 复制粘贴</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8%E4%B8%80%E4%BA%9B%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">1.13.</span> <span class="toc-text"> 8.一些插入模式下的常用快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E9%80%80%E5%87%BA%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.14.</span> <span class="toc-text"> 9. 退出插入模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E9%87%8D%E5%A4%8D%E6%93%8D%E4%BD%9C"><span class="toc-number">1.15.</span> <span class="toc-text"> 10. 重复操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E8%B7%B3%E8%BD%AC"><span class="toc-number">1.16.</span> <span class="toc-text"> 11. 跳转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E4%B9%A6%E7%AD%BE"><span class="toc-number">1.17.</span> <span class="toc-text"> 12 书签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E6%96%87%E6%9C%AC%E6%9B%BF%E6%8D%A2"><span class="toc-number">1.18.</span> <span class="toc-text"> 13 文本替换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E4%BB%A3%E7%A0%81%E6%8A%98%E5%8F%A0"><span class="toc-number">1.19.</span> <span class="toc-text"> 11 代码折叠</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E5%AE%8F%E5%AE%9A%E4%B9%89"><span class="toc-number">1.20.</span> <span class="toc-text"> 14 宏定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8%E7%BB%84%E5%90%88%E6%8A%80"><span class="toc-number">1.21.</span> <span class="toc-text"> 15. 一些常用组合技</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16-%E4%B8%80%E4%BA%9B%E5%9C%A8%E7%9B%AE%E5%89%8D%E7%89%88%E6%9C%AC%E5%B7%B2%E7%9F%A5%E6%B2%A1%E6%9C%89%E5%AE%9E%E7%8E%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8vim%E5%8A%9F%E8%83%BD"><span class="toc-number">1.22.</span> <span class="toc-text"> 16. 一些在目前版本已知没有实现的一些常用Vim功能</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/05/16/vim/" title="vim"><img src="/medias/featureimages/23.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vim"/></a><div class="content"><a class="title" href="/2024/05/16/vim/" title="vim">vim</a><time datetime="2024-05-16T15:40:53.880Z" title="发表于 2024-05-16 23:40:53">2024-05-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/15/DOS%E6%94%BB%E5%87%BB%E4%B9%8BFork-bomb/" title="DOS攻击之Fork bomb"><img src="/medias/featureimages/9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="DOS攻击之Fork bomb"/></a><div class="content"><a class="title" href="/2024/05/15/DOS%E6%94%BB%E5%87%BB%E4%B9%8BFork-bomb/" title="DOS攻击之Fork bomb">DOS攻击之Fork bomb</a><time datetime="2024-05-15T15:50:59.821Z" title="发表于 2024-05-15 23:50:59">2024-05-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/07/LaTeX%20%E7%AE%80%E6%98%93%E6%8C%87%E5%8D%97/" title="LaTeX 简易指南"><img src="/medias/featureimages/13.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="LaTeX 简易指南"/></a><div class="content"><a class="title" href="/2024/05/07/LaTeX%20%E7%AE%80%E6%98%93%E6%8C%87%E5%8D%97/" title="LaTeX 简易指南">LaTeX 简易指南</a><time datetime="2024-05-07T07:28:37.000Z" title="发表于 2024-05-07 15:28:37">2024-05-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/04/git-tip/" title="Git速查"><img src="/medias/featureimages/19.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git速查"/></a><div class="content"><a class="title" href="/2024/05/04/git-tip/" title="Git速查">Git速查</a><time datetime="2024-05-04T07:38:00.000Z" title="发表于 2024-05-04 15:38:00">2024-05-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/05/03/Markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="Markdown使用教程"><img src="/medias/featureimages/23.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Markdown使用教程"/></a><div class="content"><a class="title" href="/2024/05/03/Markdown%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" title="Markdown使用教程">Markdown使用教程</a><time datetime="2024-05-03T09:17:17.000Z" title="发表于 2024-05-03 17:17:17">2024-05-03</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/medias/banner/5.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By jiangjinmou</div><div class="footer_custom_text">人生如逆旅，我亦是行人</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="/js/tw_cn.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const abcjsInit = () => {
+    const abcjsFn = () => {
+      document.querySelectorAll(".abc-music-sheet").forEach(ele => {
+        ABCJS.renderAbc(ele, ele.innerHTML, {responsive: 'resize'})
+      })
+    }
+    
+    typeof ABCJS === 'object' ? abcjsFn()
+      : getScript('https://cdn.jsdelivr.net/npm/abcjs@6.3.0/dist/abcjs-basic-min.min.js').then(abcjsFn)
+  }
+
+  window.pjax ? abcjsInit() : window.addEventListener('load', abcjsInit)
+})()</script></div><div class="aplayer no-destroy" data-id="591497157" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true" data-order="random" data-volume="0.3" data-mutex="true" data-listMaxHeight="36vh"> </div><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div></body></html>
